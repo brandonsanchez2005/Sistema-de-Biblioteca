@@ -1,11 +1,292 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prestamos</title>
+
+    <title>Biblioteca Digital - Préstamos</title>
+
+    <link rel="stylesheet" href="prestamos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
+
 <body>
-    
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+        <div class="logo-container">
+            <img src="../../img/logo.png" alt="Logo Biblioteca Digital" class="logo">
+        </div>
+
+        <nav class="menu">
+
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="reservas.html">Reservas</a>
+            <a href="devoluciones.html">Devoluciones</a>
+
+            <a href="perfil.html">
+                <i class="fa-solid fa-user"></i>
+                Mi Perfil
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main class="contenedor-principal">
+
+        <!-- INFORMACIÓN -->
+
+        <section class="seccion">
+
+            <h2>
+                <i class="fa-solid fa-book-open"></i>
+                Módulo de Préstamos
+            </h2>
+
+            <p>
+                Desde este módulo los usuarios pueden solicitar préstamos
+                de libros disponibles y consultar el estado de sus solicitudes.
+            </p>
+
+        </section>
+
+        <!-- SOLICITAR PRÉSTAMO -->
+
+        <section class="seccion">
+
+            <h2>
+                <i class="fa-solid fa-handshake"></i>
+                Solicitar Préstamo
+            </h2>
+
+            <form class="formulario">
+
+                <div class="grupo-formulario">
+
+                    <label>Libro</label>
+
+                    <select>
+
+                        <option>Clean Code</option>
+                        <option>Java Programming</option>
+                        <option>Fundamentos de Redes</option>
+                        <option>Ingeniería de Software</option>
+
+                    </select>
+
+                </div>
+
+                <div class="grupo-formulario">
+
+                    <label>Usuario</label>
+
+                    <input type="text" placeholder="Nombre del usuario">
+
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    Solicitar Préstamo
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- LIBROS DISPONIBLES -->
+
+        <section class="seccion">
+
+            <h2>
+                <i class="fa-solid fa-book"></i>
+                Libros Disponibles
+            </h2>
+
+            <div class="contenedor-tarjetas">
+
+                <article class="tarjeta-libro">
+
+                    <h3>Clean Code</h3>
+
+                    <p>Autor: Robert C. Martin</p>
+
+                    <p>Disponibles: 5</p>
+
+                    <span class="estado disponible">
+                        Disponible
+                    </span>
+
+                </article>
+
+                <article class="tarjeta-libro">
+
+                    <h3>Ingeniería de Software</h3>
+
+                    <p>Autor: Ian Sommerville</p>
+
+                    <p>Disponibles: 2</p>
+
+                    <span class="estado disponible">
+                        Disponible
+                    </span>
+
+                </article>
+
+                <article class="tarjeta-libro">
+
+                    <h3>Redes de Computadoras</h3>
+
+                    <p>Autor: Andrew Tanenbaum</p>
+
+                    <p>Disponibles: 1</p>
+
+                    <span class="estado disponible">
+                        Disponible
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- SOLICITUDES -->
+
+        <section class="seccion">
+
+            <h2>
+                <i class="fa-solid fa-list-check"></i>
+                Gestión de Solicitudes
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Libro</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>Clean Code</td>
+
+                        <td>
+                            <span class="estado pendiente">
+                                Pendiente
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <button class="btn-aprobar">
+                                Aprobar
+                            </button>
+
+                            <button class="btn-rechazar">
+                                Rechazar
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>002</td>
+                        <td>Ana Rodríguez</td>
+                        <td>Java Programming</td>
+
+                        <td>
+                            <span class="estado aprobado">
+                                Aprobado
+                            </span>
+                        </td>
+
+                        <td>Procesado</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="seccion estadisticas">
+
+            <h2>Resumen de Préstamos</h2>
+
+            <div class="tarjeta-estadistica">
+
+                <h3>125</h3>
+
+                <p>Préstamos Activos</p>
+
+            </div>
+
+            <div class="tarjeta-estadistica">
+
+                <h3>38</h3>
+
+                <p>Solicitudes Pendientes</p>
+
+            </div>
+
+            <div class="tarjeta-estadistica">
+
+                <h3>520</h3>
+
+                <p>Préstamos Realizados</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+
+        <h3>Biblioteca Digital</h3>
+
+        <p>
+            Gestión de préstamos y recursos bibliográficos.
+        </p>
+
+        <p>
+            © 2026 Biblioteca Digital
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
