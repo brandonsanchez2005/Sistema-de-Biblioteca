@@ -131,3 +131,50 @@ footer p{
 .busqueda-avanzada{
     margin-top: 15px;
 }
+
+.botones{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+    transition:0.2s;
+}
+
+.azul{
+    background:#2f7cff;
+}
+
+.amarillo{
+    background:#f4c542;
+    color:black;
+}
+
+.celeste{
+    background:#2ec4b6;
+}
+
+.azul-oscuro{
+    background:#1d3557;
+}
+
+.btn:disabled{
+    background:#bdbdbd !important;
+    color:#f5f5f5;
+    cursor:not-allowed;
+    opacity:0.8;
+}
+
+.btn:not(:disabled):hover{
+    transform:scale(1.05);
+    opacity:0.9;
+}
