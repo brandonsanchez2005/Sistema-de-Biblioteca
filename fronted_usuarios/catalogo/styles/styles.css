@@ -9,7 +9,6 @@ body{
     background:#eef2f7;
 }
 
-/* HEADER */
 
 header{
     background:#3569e6;
@@ -34,8 +33,6 @@ nav a{
     font-size:18px;
     font-weight:bold;
 }
-
-/* CONTENIDO */
 
 main{
     width:90%;
