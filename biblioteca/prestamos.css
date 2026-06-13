@@ -19,30 +19,28 @@ body{
    ENCABEZADO
 ========================= */
 
-.encabezado{
-    background: #2563eb;
-    color: white;
-    height: 90px;
-    padding: 0 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+header{
+    background:#3569e6;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
 }
 
-/* =========================
-   LOGO
-========================= */
-
-.logo-container{
-    display: flex;
-    align-items: center;
+.logo img{
+    height:80px;
 }
 
-.logo{
-    height: 75px;
-    width: auto;
+nav{
+    display:flex;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
 }
 
 /* =========================
@@ -219,6 +217,10 @@ body{
     background: #2563eb;
 }
 
+.rechazado{
+    background: #eb2525;
+}
+
 /* =========================
    TABLAS
 ========================= */
@@ -280,12 +282,24 @@ tbody tr:hover{
    PIE DE PÁGINA
 ========================= */
 
-.pie-pagina{
-    background: #1e40af;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    margin-top: 40px;
+footer{
+    background:#2f49b8;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+    margin-top:60px;
+}
+
+footer h2{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+footer p{
+    font-size:16px;
+    margin-bottom:12px;
 }
 
 /* =========================

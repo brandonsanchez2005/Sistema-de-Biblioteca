@@ -25,26 +25,18 @@
 
     <!-- ENCABEZADO -->
 
-    <header class="encabezado">
-
-        <div class="logo-container">
-            <img src="../../img/logo.png" alt="Logo Biblioteca Digital" class="logo">
+        <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
         </div>
-
-        <nav class="menu">
-
-            <a href="index.html">Inicio</a>
-            <a href="catalogo.html">Catálogo</a>
-            <a href="reservas.html">Reservas</a>
-            <a href="devoluciones.html">Devoluciones</a>
-
-            <a href="perfil.html">
-                <i class="fa-solid fa-user"></i>
-                Mi Perfil
-            </a>
-
+        <nav>
+            <a href="../index/index_usuarios.html">Inicio</a>
+            <a href="../index/catalogo.html">Catálogo</a>
+            <a href="../historial/historial.html">Multas</a>
+            <a href="../notificaciones/notificaciones.html">Reservas</a>
+            <a href="../usuarios/mi_perfil.html">Usuarios</a>
+            <a href="../solicitudes_prestamos/prestamos.html">Prestamos</a>
         </nav>
-
     </header>
 
     <main class="contenedor-principal">
@@ -59,8 +51,8 @@
             </h2>
 
             <p>
-                Desde este módulo los admins pueden solicitar préstamos
-                de libros disponibles y consultar el estado de sus solicitudes.
+                Desde este módulo se puede gestionar los préstamos
+                de libros disponibles de forma manual y el estado de las solicitudes.
             </p>
 
         </section>
@@ -71,7 +63,7 @@
 
             <h2>
                 <i class="fa-solid fa-handshake"></i>
-                Solicitar Préstamo
+                Prestamos
             </h2>
 
             <form class="formulario">
@@ -82,10 +74,9 @@
 
                     <select>
 
-                        <option>Clean Code</option>
-                        <option>Java Programming</option>
-                        <option>Fundamentos de Redes</option>
-                        <option>Ingeniería de Software</option>
+                        <option>Don Quijote de la Mancha</option>
+                        <option>Cien años de soledad</option>
+                        <option>Fuego y Sangre</option>
 
                     </select>
 
@@ -95,78 +86,23 @@
 
                     <label>Usuario</label>
 
-                    <input type="text" placeholder="Nombre del usuario">
+                    <select>
+
+                        <option>Juan Perez</option>
+                        <option>Ana Rodríguez</option>
+                        <option>Sofia Matarrita</option>
+
+                    </select>
 
                 </div>
 
                 <button type="submit" class="btn-principal">
-                    Solicitar Préstamo
+                    Asignar Préstamo
                 </button>
 
             </form>
 
         </section>
-
-        <!-- LIBROS DISPONIBLES -->
-
-        <section class="seccion">
-
-            <h2>
-                <i class="fa-solid fa-book"></i>
-                Libros Disponibles
-            </h2>
-
-            <div class="contenedor-tarjetas">
-
-                <article class="tarjeta-libro">
-
-                    <h3>Clean Code</h3>
-
-                    <p>Autor: Robert C. Martin</p>
-
-                    <p>Disponibles: 5</p>
-
-                    <span class="estado disponible">
-                        Disponible
-                    </span>
-
-                </article>
-
-                <article class="tarjeta-libro">
-
-                    <h3>Ingeniería de Software</h3>
-
-                    <p>Autor: Ian Sommerville</p>
-
-                    <p>Disponibles: 2</p>
-
-                    <span class="estado disponible">
-                        Disponible
-                    </span>
-
-                </article>
-
-                <article class="tarjeta-libro">
-
-                    <h3>Redes de Computadoras</h3>
-
-                    <p>Autor: Andrew Tanenbaum</p>
-
-                    <p>Disponibles: 1</p>
-
-                    <span class="estado disponible">
-                        Disponible
-                    </span>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- SOLICITUDES -->
-
-        <section class="seccion">
 
             <h2>
                 <i class="fa-solid fa-list-check"></i>
@@ -195,7 +131,7 @@
 
                         <td>001</td>
                         <td>Juan Pérez</td>
-                        <td>Clean Code</td>
+                        <td>Cien años de soledad</td>
 
                         <td>
                             <span class="estado pendiente">
@@ -220,12 +156,60 @@
                     <tr>
 
                         <td>002</td>
-                        <td>Ana Rodríguez</td>
-                        <td>Java Programming</td>
+                        <td>Juan Pérez</td>
+                        <td>El Principito</td>
 
                         <td>
                             <span class="estado aprobado">
                                 Aprobado
+                            </span>
+                        </td>
+
+                        <td>Procesado</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>003</td>
+                        <td>Juan Pérez</td>
+                        <td>Harry Potter y la piedra filosofal</td>
+
+                        <td>
+                            <span class="estado aprobado">
+                                Aprobado
+                            </span>
+                        </td>
+
+                        <td>Procesado</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>004</td>
+                        <td>Ana Rodríguez</td>
+                        <td>Cemeterio de animales</td>
+
+                        <td>
+                            <span class="estado aprobado">
+                                Aprobado
+                            </span>
+                        </td>
+
+                        <td>Procesado</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>005</td>
+                        <td>Ana Rodríguez</td>
+                        <td>Fuego y Sangre/td>
+
+                        <td>
+                            <span class="estado rechazado">
+                                Rechazado
                             </span>
                         </td>
 
@@ -273,16 +257,20 @@
 
     </main>
 
-    <footer class="pie-pagina">
+    <footer>
 
-        <h3>Biblioteca Digital</h3>
+        <h2>Biblioteca Digital</h2>
 
         <p>
-            Gestión de préstamos y recursos bibliográficos.
+            Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.
         </p>
 
         <p>
-            © 2026 Biblioteca Digital
+            Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy Fernández - Braulio Cambronero.
+        </p>
+
+        <p>
+            © 2026 Biblioteca Digital - Todos los derechos reservados.
         </p>
 
     </footer>
