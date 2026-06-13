@@ -1,23 +1,14 @@
-/* =========================
-   CONFIGURACIÓN GENERAL
-========================= */
-
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f8fc;
-    color: #333;
-    line-height: 1.6;
+    background:#eef2f7;
 }
 
-/* =========================
-   ENCABEZADO
-========================= */
 
 header{
     background:#3569e6;
@@ -43,10 +34,6 @@ nav a{
     font-weight:bold;
 }
 
-/* =========================
-   MENÚ
-========================= */
-
 .menu{
     display: flex;
     gap: 15px;
@@ -66,19 +53,11 @@ nav a{
     background-color: rgba(255,255,255,0.20);
 }
 
-/* =========================
-   CONTENIDO PRINCIPAL
-========================= */
-
 .contenedor-principal{
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
-
-/* =========================
-   SECCIONES
-========================= */
 
 .seccion{
     background: white;
@@ -92,10 +71,6 @@ nav a{
     color: #2563eb;
     margin-bottom: 20px;
 }
-
-/* =========================
-   FORMULARIO
-========================= */
 
 .formulario{
     display: flex;
@@ -120,10 +95,6 @@ nav a{
     border-radius: 8px;
     font-family: inherit;
 }
-
-/* =========================
-   BOTONES
-========================= */
 
 .btn-principal,
 .btn-aprobar,
@@ -164,10 +135,6 @@ nav a{
     background: #b91c1c;
 }
 
-/* =========================
-   TARJETAS DE LIBROS
-========================= */
-
 .contenedor-tarjetas{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
@@ -190,10 +157,6 @@ nav a{
     color: #2563eb;
     margin-bottom: 10px;
 }
-
-/* =========================
-   ESTADOS
-========================= */
 
 .estado{
     display: inline-block;
@@ -221,10 +184,6 @@ nav a{
     background: #eb2525;
 }
 
-/* =========================
-   TABLAS
-========================= */
-
 table{
     width: 100%;
     border-collapse: collapse;
@@ -246,10 +205,6 @@ td{
 tbody tr:hover{
     background: #f8fafc;
 }
-
-/* =========================
-   ESTADÍSTICAS
-========================= */
 
 .estadisticas{
     display: grid;
@@ -278,10 +233,6 @@ tbody tr:hover{
     color: #555;
 }
 
-/* =========================
-   PIE DE PÁGINA
-========================= */
-
 footer{
     background:#2f49b8;
     color:white;
@@ -301,10 +252,6 @@ footer p{
     font-size:16px;
     margin-bottom:12px;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media(max-width:768px){
 

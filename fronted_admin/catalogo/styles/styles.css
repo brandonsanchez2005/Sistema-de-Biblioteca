@@ -41,8 +41,11 @@ main{
 
 .contenedor{
     background:#f7f7f7;
-    border-radius:20px;
-    padding:40px;
+    border-radius:10px;
+    padding-top:10px;
+    padding-right:40px;
+    padding-bottom:40px;
+    padding-left:40px;
 }
 
 .contenedor h2{
@@ -122,7 +125,6 @@ footer p{
     margin-bottom: 20px;
 }
 
-/* EDITAR */
 .btn-editar{
     background:#17a2b8;
     color:white;
@@ -139,7 +141,6 @@ footer p{
     opacity:0.85;
 }
 
-/* ELIMINAR */
 .btn-eliminar{
     background:#dc3545;
     color:white;
@@ -156,13 +157,11 @@ footer p{
     opacity:0.85;
 }
 
-/* CONTENEDOR DEL BOTÓN */
 .acciones-catalogo{
     margin-top:15px;
     margin-bottom:25px;
 }
 
-/* BOTÓN AGREGAR LIBRO */
 .btn-agregar-libro{
     display:inline-block;
     background:#28a745;
@@ -179,10 +178,6 @@ footer p{
     background:#218838;
     transform:translateY(-2px);
 }
-
-/* =========================
-   MODAL AGREGAR LIBRO
-========================= */
 
 .modal{
     display:none;
@@ -235,10 +230,6 @@ footer p{
     color:#dc3545;
 }
 
-/* =========================
-   FORMULARIO
-========================= */
-
 .form-libro{
     display:flex;
     flex-direction:column;
@@ -271,17 +262,11 @@ footer p{
     border:1px solid #3569e6;
 }
 
-/* INPUT DE IMAGEN */
-
 .campo input[type="file"]{
     background:white;
     padding:10px;
     cursor:pointer;
 }
-
-/* =========================
-   BOTONES
-========================= */
 
 .acciones-formulario{
     display:flex;

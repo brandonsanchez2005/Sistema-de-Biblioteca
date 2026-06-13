@@ -1,23 +1,14 @@
-/* =========================
-   CONFIGURACIÓN GENERAL
-========================= */
-
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f8fc;
-    color: #333;
-    line-height: 1.6;
+    background:#eef2f7;
 }
 
-/* =========================
-   ENCABEZADO
-========================= */
 
 header{
     background:#3569e6;
@@ -62,19 +53,11 @@ nav a{
     background-color: rgba(255,255,255,0.20);
 }
 
-/* =========================
-   CONTENIDO PRINCIPAL
-========================= */
-
 .contenedor-principal{
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
-
-/* =========================
-   SECCIONES
-========================= */
 
 .seccion{
     background: white;
@@ -93,10 +76,6 @@ nav a{
 .seccion p{
     margin-bottom: 12px;
 }
-
-/* =========================
-   ESTADÍSTICAS
-========================= */
 
 .estadisticas{
     display: grid;
@@ -132,10 +111,6 @@ nav a{
     color: #555;
 }
 
-/* =========================
-   NOVEDADES
-========================= */
-
 .novedades{
     display: flex;
     flex-direction: column;
@@ -159,10 +134,6 @@ nav a{
     margin-bottom: 8px;
 }
 
-/* =========================
-   FRASE
-========================= */
-
 .frase{
     text-align: center;
 }
@@ -177,10 +148,6 @@ nav a{
 .frase p{
     font-weight: 500;
 }
-
-/* =========================
-   PIE DE PÁGINA
-========================= */
 
 .pie-pagina{
     background: #1e40af;
@@ -197,10 +164,6 @@ nav a{
 .pie-pagina p{
     margin-bottom: 8px;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 768px){
 
@@ -226,10 +189,6 @@ nav a{
         font-size: 1.5rem;
     }
 }
-
-/* =========================
-   ICONOS
-========================= */
 
 .menu i,
 h1 i,

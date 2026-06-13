@@ -1,39 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo</title>
+
+    <title>Catálogo</title>
+
     <link rel="stylesheet" href="styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
+
     <header>
-    <div class="logo">
-        <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
-    </div>
-    <nav>
-        <a href="../index/index_usuarios.html">Inicio</a>
-        <a href="catalogo.html">Catálogo</a>
-        <a href="../historial/historial.html">Historial</a>
-        <a href="../notificaciones/notificaciones.html">Notificaciones</a>
-        <a href="../mi_perfil/mi_perfil.html">Mi Perfil</a>
-    </nav>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
+        </div>
+        <nav>
+            <a href="../index/index_usuarios.html">Inicio</a>
+            <a href="../catalogo/catalogo.html">Catálogo</a>
+            <a href="../historial/historial.html">Historial</a>
+            <a href="../notificaciones/notificaciones.html">Notificaciones</a>
+            <a href="../mi_perfil/mi_perfil.html">
+                <i class="fa-solid fa-user"></i>
+                Mi Perfil
+            </a>
+            <a href="../../login/autenticacion/autenticacion.html">
+                <i class="fa-solid fa-power-off"></i>
+            </a>
+        </nav>
+    </header>
 </header>
 
 <main>
     <section class="contenedor">
+        
+
+    <section class="busqueda">
         <h2>Catálogo de Libros</h2>
         <p>Consulta los libros disponibles en la Biblioteca Digital.</p>
 
-    <!--Búsqueda y búsqueda avanzada-->
-    <section class="busqueda">
-        <h3>Búsqueda de Libros</h3>
+            <br>
 
         <form>
-            <input type="text" placeholder="Buscar por título, autor o categoría">
-
-            <button type="submit">Buscar</button>
-
+            <div class="campo-busqueda">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Buscar por título, autor o categoría">
+            </div>
             <details>
                 <summary>Búsqueda Avanzada</summary>
 
@@ -52,7 +71,11 @@
                         <option>Novela</option>
                         <option>Infantil</option>
                         <option>Ciencia</option>
+                        <option>Sobrenatural</option>
                         <option>Historia</option>
+                        <option>Terror</option>
+                        <option>Aventura</option>
+                        <option>Fantasía</option>
                     </select>
 
                     <label>Estado:</label>
@@ -78,8 +101,8 @@
                 <p><strong>Categoría:</strong> Literatura</p>
                 <p><strong>Estado:</strong> Disponible</p>
                 <div class="botones">
-                    <button class="btn azul">Solicitar préstamo</button>
-                    <button class="btn amarillo">Reservar</button>
+                    <button class="btn azul hover">Solicitar préstamo</button>
+                    <button class="btn amarillo hover">Reservar</button>
                 </div>
             </div>
 
@@ -91,7 +114,7 @@
                 <p><strong>Estado:</strong> Disponible</p>
                 <div class="botones">
                     <button class="btn celeste">Pendiente</button>
-                    <button class="btn amarillo">Reservar</button>
+                    <button class="btn amarillo hover">Reservar</button>
                 </div>
             </div>
 
@@ -125,7 +148,7 @@
                 <p><strong>Estado:</strong> Prestado</p>
                 <div class="botones">
                     <button class="btn azul" disabled>Solicitar préstamo</button>
-                    <button class="btn amarillo">Reservar</button>
+                    <button class="btn anaranjado">Reservado</button>
                 </div>
                 
             </div>
@@ -137,8 +160,8 @@
                 <p><strong>Categoría:</strong> Fantasía</p>
                 <p><strong>Estado:</strong> Disponible</p>
                 <div class="botones">
-                    <button class="btn azul">Solicitar préstamo</button>
-                    <button class="btn amarillo">Reservar</button>
+                    <button class="btn azul hover">Solicitar préstamo</button>
+                    <button class="btn amarillo hover">Reservar</button>
                 </div>
             </div>
         </div>

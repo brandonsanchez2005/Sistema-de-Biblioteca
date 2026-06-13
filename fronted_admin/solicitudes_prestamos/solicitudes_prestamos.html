@@ -8,7 +8,7 @@
 
     <title>Biblioteca Digital - Préstamos</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,19 +23,17 @@
 
 <body>
 
-    <!-- ENCABEZADO -->
-
         <header>
         <div class="logo">
             <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
         </div>
         <nav>
-            <a href="../index/index_usuarios.html">Inicio</a>
-            <a href="../index/catalogo.html">Catálogo</a>
-            <a href="../historial/historial.html">Multas</a>
-            <a href="../notificaciones/notificaciones.html">Reservas</a>
-            <a href="../usuarios/mi_perfil.html">Usuarios</a>
-            <a href="../solicitudes_prestamos/prestamos.html">Prestamos</a>
+            <a href="../index/index_admin.html">Inicio</a>
+            <a href="../catalogo/catalogo.html">Catálogo</a>
+            <a href="../solicitudes_prestamos/solicitudes_prestamos.html">Prestamos</a>
+            <a href="../multas/multas.html">Multas</a>
+            <a href="../reservas/reservas.html">Reservas</a>
+            <a href="../usuarios/usuarios.html">Usuarios</a>
             <a href="../../login/autenticacion/autenticacion.html">
                 <i class="fa-solid fa-power-off"></i>
             </a>
@@ -43,8 +41,6 @@
     </header>
 
     <main class="contenedor-principal">
-
-        <!-- INFORMACIÓN -->
 
         <section class="seccion">
 
@@ -60,13 +56,11 @@
 
         </section>
 
-        <!-- SOLICITAR PRÉSTAMO -->
-
         <section class="seccion">
 
             <h2>
                 <i class="fa-solid fa-handshake"></i>
-                Prestamos
+                Solicitudes de Préstamo
             </h2>
 
             <form class="formulario">
@@ -106,6 +100,7 @@
             </form>
 
         </section>
+        <section class="seccion">
 
             <h2>
                 <i class="fa-solid fa-list-check"></i>
@@ -225,8 +220,6 @@
             </table>
 
         </section>
-
-        <!-- ESTADÍSTICAS -->
 
         <section class="seccion estadisticas">
 
