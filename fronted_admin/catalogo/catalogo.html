@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo</title>
     <link rel="stylesheet" href="styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header>
@@ -12,19 +21,28 @@
         <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
     </div>
     <nav>
-        <a href="../index/index_usuarios.html">Inicio</a>
-        <a href="catalogo.html">Catálogo</a>
-        <a href="../historial/historial.html">Historial</a>
-        <a href="../notificaciones/notificaciones.html">Notificaciones</a>
-        <a href="../mi_perfil/mi_perfil.html">Mi Perfil</a>
+            <a href="../index_/index_admin.html">Inicio</a>
+            <a href="../catalogo/catalogo.html">Catálogo</a>
+            <a href="../solicitudes_prestamos/solicitudes_prestamos.html">Prestamos</a>
+            <a href="../historial/multas.html">Multas</a>
+            <a href="../notificaciones/reservas.html">Reservas</a>
+            <a href="../usuarios/usuarios.html">Usuarios</a>
+            <a href="../../login/autenticacion/autenticacion.html">
+                <i class="fa-solid fa-power-off"></i>
+            </a>
     </nav>
 </header>
 
 <main>
     <section class="contenedor">
         <h2>Catálogo de Libros</h2>
-        <p>Consulta los libros disponibles en la Biblioteca Digital.</p>
+        <p>Gestiona, consulta y actualiza los libros disponibles en la Biblioteca Digital.</p>
 
+        <div class="acciones-catalogo">
+            <a href="#" class="btn-agregar-libro" onclick="abrirModal()">
+                + Agregar Libro
+            </a>
+        </div>
         <div class="catalogo">
             <div class="libro">
                 <img src="img/img1.jpg" alt="Don Quijote de la Mancha">
@@ -100,6 +118,69 @@
             </div>
         </div>
     </section>
+
+    <div id="modalLibro" class="modal">
+    <div class="modal-contenido">
+
+        <div class="modal-header">
+            <h3>Agregar Nuevo Libro</h3>
+            <button class="btn-cerrar" onclick="cerrarModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form class="form-libro">
+
+            <div class="campo">
+                <label>Título del libro</label>
+                <input type="text" placeholder="Ingrese el título">
+            </div>
+
+            <div class="campo">
+                <label>Autor</label>
+                <input type="text" placeholder="Ingrese el autor">
+            </div>
+
+            <div class="campo">
+                <label>Categoría</label>
+                <select>
+                    <option>Seleccione una categoría</option>
+                    <option>Literatura</option>
+                    <option>Novela</option>
+                    <option>Infantil</option>
+                    <option>Fantasía</option>
+                    <option>Terror</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Estado</label>
+                <select>
+                    <option>Disponible</option>
+                    <option>Prestado</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Portada del libro</label>
+                <input type="file" accept="image/*">
+            </div>
+
+            <div class="acciones-formulario">
+                <button type="button" class="btn-guardar">
+                    Guardar Libro
+                </button>
+
+                <button type="button" class="btn-cancelar"
+                    onclick="cerrarModal()">
+                    Cancelar
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
 </main>
 <footer>
 
@@ -118,5 +199,15 @@
     </p>
 
 </footer>
+
+<script>
+function abrirModal(){
+    document.getElementById("modalLibro").style.display = "flex";
+}
+
+function cerrarModal(){
+    document.getElementById("modalLibro").style.display = "none";
+}
+</script>
 </body>
 </html>
