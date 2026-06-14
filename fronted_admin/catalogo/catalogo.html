@@ -43,6 +43,74 @@
                 + Agregar Libro
             </a>
         </div>
+
+    <section class="busqueda">
+
+        <form>
+
+            <div class="campo-busqueda">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text"
+                    placeholder="Buscar por ID, ISBN, Título...">
+            </div>
+
+            <details>
+                <summary>
+                    <i class="fa-solid fa-filter"></i>
+                    Búsqueda Avanzada
+                </summary>
+
+                <div class="busqueda-avanzada">
+
+                    <label>ID del libro:</label>
+                    <input type="text"
+                        placeholder="Ingrese el ID">
+
+                    <label>ISBN:</label>
+                    <input type="text" 
+                        placeholder="Ingrese el ISBN">
+
+                    <label>Título:</label>
+                    <input type="text"
+                        placeholder="Ingrese el título">
+
+                    <label>Autor:</label>
+                    <input type="text"
+                        placeholder="Ingrese el autor">
+
+                    <label>Categoría:</label>
+                    <select>
+                        <option>Todas</option>
+                        <option>Literatura</option>
+                        <option>Novela</option>
+                        <option>Infantil</option>
+                        <option>Ciencia</option>
+                        <option>Sobrenatural</option>
+                        <option>Historia</option>
+                        <option>Terror</option>
+                        <option>Aventura</option>
+                        <option>Fantasía</option>
+                    </select>
+
+                    <label>Estado:</label>
+                    <select>
+                        <option>Todos</option>
+                        <option>Disponible</option>
+                        <option>Prestado</option>
+                    </select>
+
+                    <button type="submit">
+                        Aplicar filtros
+                    </button>
+
+                </div>
+
+            </details>
+
+        </form>
+
+    </section>
+
         <div class="catalogo">
             <div class="libro">
                 <img src="img/img1.jpg" alt="Don Quijote de la Mancha">
