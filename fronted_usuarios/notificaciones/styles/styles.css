@@ -53,3 +53,197 @@ footer p{
     font-size:16px;
     margin-bottom:12px;
 }
+
+/* MÓDULO NOTIFICACIONES */
+
+
+.contenedor-notificaciones {
+    min-height: 520px;
+    padding: 50px 8%;
+    background-color: #eef3fa;
+}
+
+.encabezado-notificaciones {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.encabezado-notificaciones h1 {
+    font-size: 34px;
+    color: #2446b8;
+    margin-bottom: 10px;
+}
+
+.encabezado-notificaciones p {
+    font-size: 16px;
+    color: #555;
+}
+
+.acciones-notificaciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.acciones-notificaciones button {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-principal {
+    background-color: #3467eb;
+    color: white;
+}
+
+.btn-principal:hover {
+    background-color: #244fc4;
+}
+
+.btn-secundario {
+    background-color: #ffffff;
+    color: #3467eb;
+    border: 1px solid #3467eb !important;
+}
+
+.btn-secundario:hover {
+    background-color: #e4ebff;
+}
+
+.lista-notificaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.notificacion {
+    background-color: white;
+    border-radius: 15px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 65px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #3467eb;
+}
+
+.notificacion.pendiente {
+    border-left-color: #3467eb;
+}
+
+.notificacion.leida {
+    opacity: 0.78;
+    border-left-color: #8a8a8a;
+}
+
+.icono-notificacion {
+    width: 55px;
+    height: 55px;
+    background-color: #e4ebff;
+    color: #3467eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 23px;
+}
+
+.icono-notificacion.alerta {
+    background-color: #fff1d6;
+    color: #d88700;
+}
+
+.icono-notificacion.exito {
+    background-color: #ddf7e7;
+    color: #229954;
+}
+
+.contenido-notificacion h3 {
+    font-size: 19px;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.contenido-notificacion p {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.contenido-notificacion span {
+    font-size: 13px;
+    color: #888;
+}
+
+.estado-notificacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge-pendiente,
+.badge-leida {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge-pendiente {
+    background-color: #e4ebff;
+    color: #244fc4;
+}
+
+.badge-leida {
+    background-color: #eeeeee;
+    color: #666;
+}
+
+.estado-notificacion button {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    background-color: #3467eb;
+    transition: 0.3s ease;
+}
+
+.estado-notificacion button:hover {
+    background-color: #244fc4;
+}
+
+.estado-notificacion button:last-child {
+    background-color: #e74c3c;
+}
+
+.estado-notificacion button:last-child:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .acciones-notificaciones {
+        flex-direction: column;
+    }
+
+    .notificacion {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .icono-notificacion {
+        margin: auto;
+    }
+
+    .estado-notificacion {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

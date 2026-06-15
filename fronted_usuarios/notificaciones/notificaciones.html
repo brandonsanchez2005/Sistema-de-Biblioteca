@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +39,116 @@
         </nav>
     </header>
 
-    <main>
-            
+    <main class="contenedor-notificaciones">
+
+        <section class="encabezado-notificaciones">
+            <h1>Notificaciones</h1>
+            <p>Consulta tus actividades recientes dentro de la Biblioteca Digital.</p>
+        </section>
+
+        <section class="acciones-notificaciones">
+            <button class="btn-principal" type="button">
+                <i class="fa-solid fa-check-double"></i>
+                Marcar todas como leídas
+            </button>
+
+            <button class="btn-secundario" type="button">
+                <i class="fa-solid fa-trash"></i>
+                Eliminar leídas
+            </button>
+        </section>
+
+        <section class="lista-notificaciones">
+
+            <article class="notificacion pendiente">
+                <div class="icono-notificacion">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div class="contenido-notificacion">
+                    <h3>Préstamo registrado</h3>
+                    <p>Se ha registrado correctamente el préstamo del libro solicitado.</p>
+                    <span>Hace 10 minutos</span>
+                </div>
+
+                <div class="estado-notificacion">
+                    <span class="badge-pendiente">Pendiente</span>
+
+                    <button class="btn-marcar" type="button" title="Marcar como leída">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+
+                    <button class="btn-eliminar" type="button" title="Eliminar notificación">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </article>
+
+            <article class="notificacion pendiente">
+                <div class="icono-notificacion alerta">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div class="contenido-notificacion">
+                    <h3>Multa pendiente</h3>
+                    <p>Tienes una multa registrada por devolución tardía de material bibliográfico.</p>
+                    <span>Hace 1 hora</span>
+                </div>
+
+                <div class="estado-notificacion">
+                    <span class="badge-pendiente">Pendiente</span>
+
+                    <button class="btn-marcar" type="button" title="Marcar como leída">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+
+                    <button class="btn-eliminar" type="button" title="Eliminar notificación">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </article>
+
+            <article class="notificacion leida">
+                <div class="icono-notificacion exito">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="contenido-notificacion">
+                    <h3>Devolución realizada</h3>
+                    <p>La devolución del material fue registrada correctamente en el sistema.</p>
+                    <span>Ayer</span>
+                </div>
+
+                <div class="estado-notificacion">
+                    <span class="badge-leida">Leída</span>
+
+                    <button class="btn-eliminar" type="button" title="Eliminar notificación">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </article>
+
+            <article class="notificacion leida">
+                <div class="icono-notificacion">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div class="contenido-notificacion">
+                    <h3>Recordatorio de préstamo</h3>
+                    <p>Recuerda revisar la fecha límite de devolución de tus préstamos activos.</p>
+                    <span>Hace 2 días</span>
+                </div>
+
+                <div class="estado-notificacion">
+                    <span class="badge-leida">Leída</span>
+
+                    <button class="btn-eliminar" type="button" title="Eliminar notificación">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </article>
+
+        </section>
 
     </main>
 
@@ -61,6 +169,73 @@
         </p>
 
     </footer>
+
+    <script>
+        const botonesMarcar = document.querySelectorAll('.btn-marcar');
+
+        botonesMarcar.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const notificacion = boton.closest('.notificacion');
+
+                notificacion.classList.remove('pendiente');
+                notificacion.classList.add('leida');
+
+                const badge = notificacion.querySelector('.badge-pendiente');
+
+                if (badge) {
+                    badge.textContent = 'Leída';
+                    badge.classList.remove('badge-pendiente');
+                    badge.classList.add('badge-leida');
+                }
+
+                boton.remove();
+            });
+        });
+
+        const botonesEliminar = document.querySelectorAll('.btn-eliminar');
+
+        botonesEliminar.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const notificacion = boton.closest('.notificacion');
+                notificacion.remove();
+            });
+        });
+
+        const btnMarcarTodas = document.querySelector('.btn-principal');
+
+        btnMarcarTodas.addEventListener('click', () => {
+            const notificacionesPendientes = document.querySelectorAll('.notificacion.pendiente');
+
+            notificacionesPendientes.forEach(notificacion => {
+                notificacion.classList.remove('pendiente');
+                notificacion.classList.add('leida');
+
+                const badge = notificacion.querySelector('.badge-pendiente');
+
+                if (badge) {
+                    badge.textContent = 'Leída';
+                    badge.classList.remove('badge-pendiente');
+                    badge.classList.add('badge-leida');
+                }
+
+                const botonMarcar = notificacion.querySelector('.btn-marcar');
+
+                if (botonMarcar) {
+                    botonMarcar.remove();
+                }
+            });
+        });
+
+        const btnEliminarLeidas = document.querySelector('.btn-secundario');
+
+        btnEliminarLeidas.addEventListener('click', () => {
+            const notificacionesLeidas = document.querySelectorAll('.notificacion.leida');
+
+            notificacionesLeidas.forEach(notificacion => {
+                notificacion.remove();
+            });
+        });
+    </script>
 
 </body>
 </html>
