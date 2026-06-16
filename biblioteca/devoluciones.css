@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f8fc;
+    color:#333;
+}
+
+.encabezado{
+    background:#2563eb;
+    color:white;
+    height:90px;
+    padding:0 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    height:75px;
+}
+
+.menu{
+    display:flex;
+    gap:15px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:8px;
+}
+
+.menu a:hover{
+    background:rgba(255,255,255,0.20);
+}
+
+.contenedor-principal{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.seccion{
+    background:white;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.06);
+}
+
+.seccion h2{
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.formulario{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.grupo-formulario{
+    display:flex;
+    flex-direction:column;
+}
+
+.grupo-formulario input{
+    padding:12px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+}
+
+.btn-principal{
+    width:fit-content;
+    border:none;
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-principal:hover{
+    background:#1d4ed8;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#2563eb;
+    color:white;
+}
+
+th,
+td{
+    padding:12px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.estado{
+    padding:6px 12px;
+    border-radius:20px;
+    color:white;
+    font-size:0.85rem;
+}
+
+.activo{
+    background:#16a34a;
+}
+
+.retrasado{
+    background:#dc2626;
+}
+
+.contenedor-tarjetas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.tarjeta-info{
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    padding:20px;
+    border-radius:12px;
+}
+
+.tarjeta-info h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.pie-pagina{
+    background:#1e40af;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+    .encabezado{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}

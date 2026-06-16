@@ -1,11 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devoluciones</title>
+
+    <title>Biblioteca Digital - Devoluciones</title>
+
+    <link rel="stylesheet" href="devoluciones.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
+
 <body>
-    
+
+    <header class="encabezado">
+
+        <div class="logo-container">
+
+            <img src="../../img/logo.png" alt="Logo Biblioteca Digital" class="logo">
+
+        </div>
+
+        <nav class="menu">
+
+            <a href="index.html">Inicio</a>
+            <a href="prestamos.html">Préstamos</a>
+            <a href="reservas.html">Reservas</a>
+            <a href="perfil.html">Mi Perfil</a>
+
+        </nav>
+
+    </header>
+
+    <main class="contenedor-principal">
+
+        <!-- INFORMACIÓN -->
+
+        <section class="seccion">
+
+            <h2>
+                <i class="fa-solid fa-rotate-left"></i>
+                Módulo de Devoluciones
+            </h2>
+
+            <p>
+                Este módulo permite registrar devoluciones de libros,
+                validar préstamos activos y generar multas en caso de retraso.
+            </p>
+
+        </section>
+
+        <!-- REGISTRAR DEVOLUCIÓN -->
+
+        <section class="seccion">
+
+            <h2>
+                Registrar Devolución
+            </h2>
+
+            <form class="formulario">
+
+                <div class="grupo-formulario">
+
+                    <label>ID del Préstamo</label>
+
+                    <input type="text" placeholder="Ingrese el ID del préstamo">
+
+                </div>
+
+                <div class="grupo-formulario">
+
+                    <label>Libro</label>
+
+                    <input type="text" placeholder="Nombre del libro">
+
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    Registrar Devolución
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- PRÉSTAMOS ACTIVOS -->
+
+        <section class="seccion">
+
+            <h2>
+                Préstamos Activos
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Libro</th>
+                        <th>Fecha Préstamo</th>
+                        <th>Fecha Límite</th>
+                        <th>Estado</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>Clean Code</td>
+                        <td>01/08/2026</td>
+                        <td>15/08/2026</td>
+
+                        <td>
+                            <span class="estado activo">
+                                Activo
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>002</td>
+                        <td>María Gómez</td>
+                        <td>Ingeniería de Software</td>
+                        <td>05/08/2026</td>
+                        <td>19/08/2026</td>
+
+                        <td>
+                            <span class="estado retrasado">
+                                Retraso
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- VALIDACIONES -->
+
+        <section class="seccion">
+
+            <h2>
+                Validaciones del Sistema
+            </h2>
+
+            <div class="contenedor-tarjetas">
+
+                <article class="tarjeta-info">
+
+                    <h3>Préstamo Existente</h3>
+
+                    <p>
+                        El sistema verifica que exista un préstamo activo
+                        antes de permitir la devolución.
+                    </p>
+
+                </article>
+
+                <article class="tarjeta-info">
+
+                    <h3>Prevención de Duplicados</h3>
+
+                    <p>
+                        No se permite registrar una devolución dos veces.
+                    </p>
+
+                </article>
+
+                <article class="tarjeta-info">
+
+                    <h3>Control de Multas</h3>
+
+                    <p>
+                        Si la devolución ocurre fuera de tiempo,
+                        se genera una multa automáticamente.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- MULTAS -->
+
+        <section class="seccion">
+
+            <h2>
+                Multas Generadas
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Usuario</th>
+                        <th>Libro</th>
+                        <th>Días Retraso</th>
+                        <th>Monto</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>María Gómez</td>
+                        <td>Ingeniería de Software</td>
+                        <td>5</td>
+                        <td>₡2,500</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+
+        <h3>Biblioteca Digital</h3>
+
+        <p>Gestión de devoluciones y multas.</p>
+
+        <p>© 2026 Biblioteca Digital</p>
+
+    </footer>
+
 </body>
+
 </html>
