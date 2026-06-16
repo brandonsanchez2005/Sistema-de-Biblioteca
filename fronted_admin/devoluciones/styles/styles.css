@@ -1,0 +1,178 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef2f7;
+}
+
+
+header{
+    background:#3569e6;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+}
+
+.logo img{
+    height:80px;
+}
+
+nav{
+    display:flex;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+footer{
+    background:#2f49b8;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+    margin-top:60px;
+}
+
+footer h2{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+footer p{
+    font-size:16px;
+    margin-bottom:12px;
+}
+
+main{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.seccion{
+    background:white;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.seccion h2{
+    color:#3569e6;
+    margin-bottom:15px;
+}
+
+.formulario{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.grupo-formulario{
+    display:flex;
+    flex-direction:column;
+}
+
+.grupo-formulario label{
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.grupo-formulario input{
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+}
+
+.checkbox-label{
+    margin-top:15px;
+    margin-bottom:10px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.btn-principal{
+    width:fit-content;
+    background:#3569e6;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-principal:hover{
+    background:#2f49b8;
+}
+
+.contenedor-tarjetas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.tarjeta-info{
+    background:#eef4ff;
+    border-left:5px solid #3569e6;
+    padding:20px;
+    border-radius:10px;
+}
+
+.tarjeta-info h3{
+    color:#3569e6;
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#3569e6;
+    color:white;
+}
+
+th,
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+.estado{
+    padding:6px 12px;
+    border-radius:20px;
+    color:white;
+    font-size:14px;
+}
+
+.activo{
+    background:#16a34a;
+}
+
+.retrasado{
+    background:#dc2626;
+}
+
+@media(max-width:768px){
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}
