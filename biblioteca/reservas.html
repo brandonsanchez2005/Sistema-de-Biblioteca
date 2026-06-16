@@ -1,11 +1,454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
+
+    <title>Biblioteca Digital - Reservas</title>
+
+    <link rel="stylesheet" href="reservas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
+
 <body>
-    
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
+
+        </div>
+
+        <nav>
+
+            <a href="../index/index_usuarios.html">Inicio</a>
+            <a href="../index/catalogo.html">Catálogo</a>
+            <a href="../historial/historial.html">Multas</a>
+            <a href="../reservas/reservas.html">Reservas</a>
+            <a href="../usuarios/mi_perfil.html">Usuarios</a>
+            <a href="../solicitudes_prestamos/prestamos.html">Préstamos</a>
+
+            <a href="../../login/autenticacion/autenticacion.html">
+                <i class="fa-solid fa-power-off"></i>
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main class="contenedor-principal">
+
+        <!-- INFORMACIÓN -->
+
+        <section class="seccion">
+
+            <h2>
+
+                <i class="fa-solid fa-bookmark"></i>
+                Módulo de Reservas
+
+            </h2>
+
+            <p>
+                Este módulo permite registrar y gestionar reservas
+                de libros que actualmente no cuentan con disponibilidad
+                inmediata para préstamo.
+            </p>
+
+        </section>
+
+        <!-- REGISTRAR RESERVA -->
+
+        <section class="seccion">
+
+            <h2>
+
+                <i class="fa-solid fa-plus"></i>
+                Registrar Reserva
+
+            </h2>
+
+            <form class="formulario">
+
+                <div class="grupo-formulario">
+
+                    <label>Usuario</label>
+
+                    <select>
+
+                        <option>Juan Pérez</option>
+                        <option>Ana Rodríguez</option>
+                        <option>Sofia Matarrita</option>
+
+                    </select>
+
+                </div>
+
+                <div class="grupo-formulario">
+
+                    <label>Libro</label>
+
+                    <select>
+
+                        <option>Don Quijote de la Mancha</option>
+                        <option>Cien años de soledad</option>
+                        <option>Fuego y Sangre</option>
+                        <option>El Principito</option>
+                        <option>Harry Potter y la piedra filosofal</option>
+                        <option>Cementerio de animales</option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit" class="btn-principal">
+
+                    Registrar Reserva
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- LIBROS SIN DISPONIBILIDAD -->
+
+        <section class="seccion">
+
+            <h2>
+
+                <i class="fa-solid fa-book"></i>
+                Libros Sin Disponibilidad
+
+            </h2>
+
+            <div class="contenedor-tarjetas">
+
+                <article class="tarjeta-info">
+
+                    <h3>Cien años de soledad</h3>
+
+                    <p>
+                        Todas las copias se encuentran actualmente prestadas.
+                    </p>
+
+                    <span class="estado agotado">
+                        Agotado
+                    </span>
+
+                </article>
+
+                <article class="tarjeta-info">
+
+                    <h3>Fuego y Sangre</h3>
+
+                    <p>
+                        Todas las copias se encuentran actualmente prestadas.
+                    </p>
+
+                    <span class="estado agotado">
+                        Agotado
+                    </span>
+
+                </article>
+
+                <article class="tarjeta-info">
+
+                    <h3>Harry Potter y la piedra filosofal</h3>
+
+                    <p>
+                        Todas las copias se encuentran actualmente prestadas.
+                    </p>
+
+                    <span class="estado agotado">
+                        Agotado
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- RESERVAS ACTIVAS -->
+
+        <section class="seccion">
+
+            <h2>
+
+                <i class="fa-solid fa-list"></i>
+                Reservas Activas
+
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Libro</th>
+                        <th>Fecha Reserva</th>
+                        <th>Estado</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>Cien años de soledad</td>
+                        <td>12/08/2026</td>
+
+                        <td>
+
+                            <span class="estado reservado">
+
+                                Reservado
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>002</td>
+                        <td>Ana Rodríguez</td>
+                        <td>Fuego y Sangre</td>
+                        <td>13/08/2026</td>
+
+                        <td>
+
+                            <span class="estado reservado">
+
+                                Reservado
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>003</td>
+                        <td>Sofia Matarrita</td>
+                        <td>Harry Potter y la piedra filosofal</td>
+                        <td>14/08/2026</td>
+
+                        <td>
+
+                            <span class="estado reservado">
+
+                                Reservado
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- GESTIÓN DE RESERVAS -->
+
+        <section class="seccion">
+
+            <h2>
+
+                <i class="fa-solid fa-gear"></i>
+                Gestión de Reservas
+
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Libro</th>
+                        <th>Acción</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>Cien años de soledad</td>
+
+                        <td>
+
+                            <button class="btn-cancelar">
+
+                                Cancelar Reserva
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>002</td>
+                        <td>Ana Rodríguez</td>
+                        <td>Fuego y Sangre</td>
+
+                        <td>
+
+                            <button class="btn-cancelar">
+
+                                Cancelar Reserva
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- VALIDACIONES -->
+
+        <section class="seccion">
+
+            <h2>
+
+                <i class="fa-solid fa-shield-halved"></i>
+                Validaciones del Sistema
+
+            </h2>
+
+            <div class="contenedor-tarjetas">
+
+                <article class="tarjeta-info">
+
+                    <h3>Control de Disponibilidad</h3>
+
+                    <p>
+                        Solo se permite realizar una reserva cuando el libro
+                        no cuenta con existencias disponibles.
+                    </p>
+
+                </article>
+
+                <article class="tarjeta-info">
+
+                    <h3>Asociación al Usuario</h3>
+
+                    <p>
+                        Cada reserva queda registrada y vinculada
+                        al usuario correspondiente.
+                    </p>
+
+                </article>
+
+                <article class="tarjeta-info">
+
+                    <h3>Prevención de Duplicados</h3>
+
+                    <p>
+                        El sistema evita que un usuario reserve
+                        el mismo libro más de una vez.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="seccion estadisticas">
+
+            <h2>Resumen de Reservas</h2>
+
+            <div class="tarjeta-estadistica">
+
+                <h3>24</h3>
+
+                <p>Reservas Activas</p>
+
+            </div>
+
+            <div class="tarjeta-estadistica">
+
+                <h3>8</h3>
+
+                <p>Libros Agotados</p>
+
+            </div>
+
+            <div class="tarjeta-estadistica">
+
+                <h3>132</h3>
+
+                <p>Reservas Registradas</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <h2>Biblioteca Digital</h2>
+
+        <p>
+            Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.
+        </p>
+
+        <p>
+            Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano -
+            Stacy Fernández - Braulio Cambronero.
+        </p>
+
+        <p>
+            © 2026 Biblioteca Digital - Todos los derechos reservados.
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
