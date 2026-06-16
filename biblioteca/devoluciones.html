@@ -42,8 +42,6 @@
 
     <main class="contenedor-principal">
 
-        <!-- INFORMACIÓN -->
-
         <section class="seccion">
 
             <h2>
@@ -53,111 +51,10 @@
 
             <p>
                 Este módulo permite registrar devoluciones de libros,
-                validar préstamos activos y generar multas en caso de retraso.
+                validar préstamos activos y pagar multas.
             </p>
 
         </section>
-
-        <!-- REGISTRAR DEVOLUCIÓN -->
-
-        <section class="seccion">
-
-            <h2>
-                Registrar Devolución
-            </h2>
-
-            <form class="formulario">
-
-                <div class="grupo-formulario">
-
-                    <label>ID del Préstamo</label>
-
-                    <input type="text" placeholder="Ingrese el ID del préstamo">
-
-                </div>
-
-                <div class="grupo-formulario">
-
-                    <label>Libro</label>
-
-                    <input type="text" placeholder="Nombre del libro">
-
-                </div>
-
-                <button type="submit" class="btn-principal">
-                    Registrar Devolución
-                </button>
-
-            </form>
-
-        </section>
-
-        <!-- PRÉSTAMOS ACTIVOS -->
-
-        <section class="seccion">
-
-            <h2>
-                Préstamos Activos
-            </h2>
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>ID</th>
-                        <th>Usuario</th>
-                        <th>Libro</th>
-                        <th>Fecha Préstamo</th>
-                        <th>Fecha Límite</th>
-                        <th>Estado</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-
-                        <td>001</td>
-                        <td>Juan Pérez</td>
-                        <td>Clean Code</td>
-                        <td>01/08/2026</td>
-                        <td>15/08/2026</td>
-
-                        <td>
-                            <span class="estado activo">
-                                Activo
-                            </span>
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>002</td>
-                        <td>María Gómez</td>
-                        <td>Ingeniería de Software</td>
-                        <td>05/08/2026</td>
-                        <td>19/08/2026</td>
-
-                        <td>
-                            <span class="estado retrasado">
-                                Retraso
-                            </span>
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <!-- VALIDACIONES -->
 
         <section class="seccion">
 
@@ -193,8 +90,8 @@
                     <h3>Control de Multas</h3>
 
                     <p>
-                        Si la devolución ocurre fuera de tiempo,
-                        se genera una multa automáticamente.
+                        Si pasan mas de 30 días y aun no se ha registrado la
+                        devolución, el sistema genera la multa automáticamente.
                     </p>
 
                 </article>
@@ -203,12 +100,50 @@
 
         </section>
 
-        <!-- MULTAS -->
+        <section class="seccion">
+
+            <h2>
+                Registrar Devolución
+            </h2>
+
+            <form class="formulario">
+
+                <div class="grupo-formulario">
+
+                    <label>ID del Préstamo</label>
+
+                    <input type="text" placeholder="Ingrese el ID del préstamo">
+
+                </div>
+
+                <div class="grupo-formulario">
+
+                    <label>Fecha de Devolución</label>
+
+                    <input type="date">
+                    <br>
+                    <label>
+                    <input type="checkbox" id="tieneMulta">
+                        El libro fue devuelto fuera del plazo y generó una multa
+                    </label>
+                    
+                    <label>Monto cancelado por concepto de multa</label>
+                    <input type="number" min="0" step="0.01" placeholder="Ingrese el monto pagado" id="montoMulta" disabled>
+
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    Registrar Devolución
+                </button>
+
+            </form>
+
+        </section>
 
         <section class="seccion">
 
             <h2>
-                Multas Generadas
+                Préstamos Activos
             </h2>
 
             <table>
@@ -217,10 +152,12 @@
 
                     <tr>
 
+                        <th>ID</th>
                         <th>Usuario</th>
                         <th>Libro</th>
-                        <th>Días Retraso</th>
-                        <th>Monto</th>
+                        <th>Fecha Préstamo</th>
+                        <th>Fecha Límite</th>
+                        <th>Estado</th>
 
                     </tr>
 
@@ -230,10 +167,49 @@
 
                     <tr>
 
-                        <td>María Gómez</td>
-                        <td>Ingeniería de Software</td>
-                        <td>5</td>
-                        <td>₡2,500</td>
+                        <td>002</td>
+                        <td>Juan Pérez</td>
+                        <td>El Principito</td>
+                        <td>01/05/2026</td>
+                        <td>31/05/2026</td>
+
+                        <td>
+                            <span class="estado retrasado">
+                                Retraso
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>003</td>
+                        <td>Juan Pérez</td>
+                        <td>Harry Potter y la piedra filosofal</td>
+                        <td>20/05/2026</td>
+                        <td>19/06/2026</td>
+
+                        <td>
+                            <span class="estado activo">
+                                Activo
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>004</td>
+                        <td>Ana Rodríguez</td>
+                        <td>Cementerio de Animales</td>
+                        <td>01/06/2026</td>
+                        <td>31/06/2026</td>
+
+                        <td>
+                            <span class="estado activo">
+                                Activo
+                            </span>
+                        </td>
 
                     </tr>
 
@@ -264,5 +240,17 @@
     </footer>
 
 </body>
+<script>
+const tieneMulta = document.getElementById("tieneMulta");
+const montoMulta = document.getElementById("montoMulta");
+
+tieneMulta.addEventListener("change", function() {
+    montoMulta.disabled = !this.checked;
+
+    if (!this.checked) {
+        montoMulta.value = "";
+    }
+});
+</script>
 
 </html>
