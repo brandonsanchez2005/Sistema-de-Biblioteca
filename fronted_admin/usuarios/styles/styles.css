@@ -1,55 +1,336 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background:#eef2f7;
+body {
+    background: #eef2f7;
+    color: #333;
 }
 
-
-header{
-    background:#3569e6;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 50px;
+header {
+    background: #3569e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
 }
 
-.logo img{
-    height:80px;
+.logo img {
+    height: 80px;
 }
 
-nav{
-    display:flex;
-    gap:40px;
+nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    font-size:18px;
-    font-weight:bold;
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.2s;
 }
 
-footer{
-    background:#2f49b8;
-    color:white;
-    text-align:center;
-    padding:45px 20px;
-    margin-top:60px;
+nav a:hover {
+    opacity: 0.8;
 }
 
-footer h2{
-    color:white;
-    font-size:24px;
-    font-weight:bold;
-    margin-bottom:20px;
+footer {
+    background: #2f49b8;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 60px;
 }
 
-footer p{
-    font-size:16px;
-    margin-bottom:12px;
+footer h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.contenedor {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.contenedor h2 {
+    color: #3569e6;
+    margin-bottom: 5px;
+}
+
+.acciones-usuarios {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.btn-agregar-usuario {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-agregar-usuario:hover {
+    background: #218838;
+}
+
+.usuarios-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-usuario {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: transform 0.2s;
+}
+
+.tarjeta-usuario:hover {
+    transform: translateY(-2px);
+}
+
+.tarjeta-usuario h3 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.tarjeta-usuario p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.usuario-icono {
+    text-align: center;
+    font-size: 60px;
+    color: #3569e6;
+    margin-bottom: 15px;
+}
+
+.botones-admin {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn-editar {
+    background: #17a2b8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-editar:hover {
+    background: #138496;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-contenido {
+    background: white;
+    width: 500px;
+    max-width: 90%;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.modal-header h3 {
+    color: #3569e6;
+    font-size: 20px;
+}
+
+.btn-cerrar {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-cerrar:hover {
+    color: #dc3545;
+}
+
+.form-usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.campo input,
+.campo select {
+    font-family: inherit;
+    padding: 10px 12px;
+    border: 1px solid #d5dbe6;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #3569e6;
+}
+
+.acciones-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-guardar {
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-guardar:hover {
+    background: #218838;
+}
+
+.btn-cancelar {
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-cancelar:hover {
+    background: #5a6268;
+}
+
+.acciones-usuarios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.buscador-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+
+.buscador-container input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #d5dbe6;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.buscador-container input:focus {
+    border-color: #3569e6;
+    box-shadow: 0 0 0 3px rgba(53, 105, 230, 0.15);
+}
+
+.buscador-icono {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+    font-size: 14px;
+    pointer-events: none;
 }

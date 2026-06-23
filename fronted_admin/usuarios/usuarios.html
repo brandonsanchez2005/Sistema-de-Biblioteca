@@ -1,65 +1,255 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Usuarios - Administrador</title>
 
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-
-<body>
-
+  <body>
     <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
-        </div>
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo de la Biblioteca Digital" />
+      </div>
 
-        <nav>
-            <a href="../index/index_admin.html">Inicio</a>
-            <a href="../catalogo/catalogo.html">Catálogo</a>
-            <a href="../solicitudes_prestamos/solicitudes_prestamos.html">Préstamos</a>
-            <a href="../devoluciones/devoluciones.html">Devoluciones</a>
-            <a href="../multas/multas.html">Multas</a>
-            <a href="../reservas/reservas.html">Reservas</a>
-            <a href="../usuarios/usuarios.html">Usuarios</a>
-            <a href="../../login/autenticacion/autenticacion.html">
-                <i class="fa-solid fa-power-off"></i>
-            </a>
-        </nav>
+      <nav>
+        <a href="../index/index_admin.html">Inicio</a>
+        <a href="../catalogo/catalogo.html">Catálogo</a>
+        <a href="../solicitudes_prestamos/solicitudes_prestamos.html">Préstamos</a>
+        <a href="../devoluciones/devoluciones.html">Devoluciones</a>
+        <a href="../multas/multas.html">Multas</a>
+        <a href="../reservas/reservas.html">Reservas</a>
+        <a href="../usuarios/usuarios.html">Usuarios</a>
+        <a href="../../login/autenticacion/autenticacion.html">
+          <i class="fa-solid fa-power-off"></i>
+        </a>
+      </nav>
     </header>
 
     <main>
-            
+      <section class="contenedor">
+        <h2>Gestión de Usuarios</h2>
+        <p>
+          Administra los usuarios, roles y permisos de la Biblioteca Digital.
+        </p>
 
+        <div class="acciones-usuarios">
+          <a href="#" class="btn-agregar-usuario" onclick="abrirModalUsuario()">
+            <i class="fa-solid fa-user-plus"></i> Agregar Usuario
+          </a>
+
+          <div class="buscador-container">
+            <i class="fa-solid fa-magnifying-glass buscador-icono"></i>
+            <input
+              type="text"
+              id="inputBuscar"
+              placeholder="Buscar por nombre o correo..."
+              onkeyup="filtrarUsuarios()"
+            />
+          </div>
+        </div>
+
+        <div class="usuarios-grid">
+          <div class="tarjeta-usuario">
+            <div class="usuario-icono">
+              <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <h3 class="u-nombre">Juan Pérez</h3>
+            <p><strong>ID:</strong> <span class="u-id">001</span></p>
+            <p><strong>Correo:</strong> <span class="u-correo">juanperez@correo.com</span></p>
+            <p><strong>Rol:</strong> <span class="u-rol">Usuario</span></p>
+            <p><strong>Estado:</strong> <span>Activo</span></p>
+
+            <div class="botones-admin">
+              <button class="btn-editar" onclick="abrirModalModificar(this)">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="tarjeta-usuario">
+            <div class="usuario-icono">
+              <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <h3 class="u-nombre">Ana Rodríguez</h3>
+            <p><strong>ID:</strong> <span class="u-id">002</span></p>
+            <p><strong>Correo:</strong> <span class="u-correo">anarodriguez@correo.com</span></p>
+            <p><strong>Rol:</strong> <span class="u-rol">Usuario</span></p>
+            <p><strong>Estado:</strong> <span>Activo</span></p>
+
+            <div class="botones-admin">
+              <button class="btn-editar" onclick="abrirModalModificar(this)">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="tarjeta-usuario">
+            <div class="usuario-icono">
+              <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <h3 class="u-nombre">Sofia Matarrita</h3>
+            <p><strong>ID:</strong> <span class="u-id">003</span></p>
+            <p><strong>Correo:</strong> <span class="u-correo">sofiamatarrita@correo.com</span></p>
+            <p><strong>Rol:</strong> <span class="u-rol">Usuario</span></p>
+            <p><strong>Estado:</strong> <span>Activo</span></p>
+
+            <div class="botones-admin">
+              <button class="btn-editar" onclick="abrirModalModificar(this)">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="tarjeta-usuario">
+            <div class="usuario-icono">
+              <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <h3 class="u-nombre">Brandon Sanchez</h3>
+            <p><strong>ID:</strong> <span class="u-id">007</span></p>
+            <p><strong>Correo:</strong> <span class="u-correo">brandonsanchez@correo.com</span></p>
+            <p><strong>Rol:</strong> <span class="u-rol">Administrador</span></p>
+            <p><strong>Estado:</strong> <span>Activo</span></p>
+
+            <div class="botones-admin">
+              <button class="btn-editar" onclick="abrirModalModificar(this)">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="modalUsuario" class="modal">
+        <div class="modal-contenido">
+          <div class="modal-header">
+            <h3 id="modalTitulo">Crear Usuario</h3>
+            <button class="btn-cerrar" onclick="cerrarModalUsuario()">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <form class="form-usuario">
+            <div class="campo">
+              <label>Nombre Completo</label>
+              <input type="text" id="formNombre" placeholder="Ingrese el nombre" />
+            </div>
+
+            <div class="campo">
+              <label>Correo Electrónico</label>
+              <input type="email" id="formCorreo" placeholder="Ingrese el correo" />
+            </div>
+
+            <div class="campo" id="contenedorContrasena">
+              <label>Contraseña</label>
+              <input type="password" placeholder="Ingrese la contraseña" />
+            </div>
+
+            <div class="campo">
+              <label>Rol</label>
+              <select id="formRol">
+                <option value="Administrador">Administrador</option>
+                <option value="Usuario">Usuario</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label>Permisos</label>
+              <select id="formPermisos">
+                <option>Control Total</option>
+                <option>Gestión de Libros</option>
+                <option>Gestión de Usuarios</option>
+                <option>Solo Consulta</option>
+              </select>
+            </div>
+
+            <div class="acciones-formulario">
+              <button type="button" id="btnGuardarModal" class="btn-guardar">Guardar Usuario</button>
+              <button type="button" class="btn-cancelar" onclick="cerrarModalUsuario()">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer>
-
-        <h2>Biblioteca Digital</h2>
-
-        <p>
-            Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.
-        </p>
-
-        <p>
-            Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy Fernández - Braulio Cambronero.
-        </p>
-
-        <p>
-            © 2026 Biblioteca Digital - Todos los derechos reservados.
-        </p>
-
+      <h2>Biblioteca Digital</h2>
+      <p>
+        Acceso al conocimiento, aprendizaje e investigación para toda la
+        comunidad educativa.
+      </p>
+      <p>
+        Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy
+        Fernández - Braulio Cambronero.
+      </p>
+      <p>© 2026 Biblioteca Digital - Todos los derechos reservados.</p>
     </footer>
 
-</body>
+    <script>
+      
+      function abrirModalUsuario() {
+        document.getElementById("modalTitulo").textContent = "Crear Usuario";
+        document.getElementById("btnGuardarModal").textContent = "Guardar Usuario";
+        document.getElementById("contenedorContrasena").style.display = "flex";
+        document.getElementById("formNombre").value = "";
+        document.getElementById("formCorreo").value = "";
+        document.getElementById("formRol").selectedIndex = 0;
+        
+        document.getElementById("modalUsuario").style.display = "flex";
+      }
+      function abrirModalModificar(boton) {
+        const tarjeta = boton.closest(".tarjeta-usuario");
+        const nombre = tarjeta.querySelector(".u-nombre").textContent;
+        const correo = tarjeta.querySelector(".u-correo").textContent;
+        const rol = tarjeta.querySelector(".u-rol").textContent;
+
+        document.getElementById("modalTitulo").textContent = "Modificar Usuario";
+        document.getElementById("btnGuardarModal").textContent = "Actualizar Datos";
+        document.getElementById("contenedorContrasena").style.display = "none";
+        document.getElementById("formNombre").value = nombre;
+        document.getElementById("formCorreo").value = correo;
+        document.getElementById("formRol").value = rol;
+        document.getElementById("modalUsuario").style.display = "flex";
+      }
+
+      function cerrarModalUsuario() {
+        document.getElementById("modalUsuario").style.display = "none";
+      }
+
+      function filtrarUsuarios() {
+        const textoBusqueda = document.getElementById("inputBuscar").value.toLowerCase();
+        const tarjetas = document.querySelectorAll(".tarjeta-usuario");
+
+        tarjetas.forEach(tarjeta => {
+            const nombre = tarjeta.querySelector("h3").textContent.toLowerCase();
+            const infoParrafos = tarjeta.querySelectorAll("p");
+            let correo = "";
+        
+            infoParrafos.forEach(p => {
+                if (p.textContent.includes("Correo:")) {
+                    correo = p.textContent.toLowerCase();
+                }
+            });
+
+            if (nombre.includes(textoBusqueda) || correo.includes(textoBusqueda)) {
+                tarjeta.style.display = "";
+            } else {
+                tarjeta.style.display = "none";
+            }
+        });
+      }
+    </script>
+  </body>
 </html>
