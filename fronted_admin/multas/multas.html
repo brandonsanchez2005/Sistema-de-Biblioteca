@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -39,27 +36,179 @@
     </header>
 
     <main>
-            
+        <section class="contenedor">
+            <h2>Gestión de Multas</h2>
+            <p>Monitoree las infracciones automatizadas, filtre el historial y registre los pagos de los usuarios sancionados.</p>
 
+            <div class="acciones-multas">
+                <div class="filtros-grid">
+                    <div class="campo-filtro">
+                        <label for="buscarUsuario"><i class="fa-solid fa-user"></i> Usuario / ID</label>
+                        <input type="text" id="buscarUsuario" placeholder="Buscar por nombre o ID" onkeyup="filtrarMultas()">
+                    </div>
+                    <div class="campo-filtro">
+                        <label for="filtrarEstado"><i class="fa-solid fa-toggle-on"></i> Estado</label>
+                        <select id="filtrarEstado" onchange="filtrarMultas()">
+                            <option value="todos">Todos los estados</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="pagada">Pagada</option>
+                        </select>
+                    </div>
+                    <div class="campo-filtro">
+                        <label for="fechaInicio"><i class="fa-solid fa-calendar-days"></i> Desde</label>
+                        <input type="date" id="fechaInicio" onchange="filtrarMultas()">
+                    </div>
+                    <div class="campo-filtro">
+                        <label for="fechaFin"><i class="fa-solid fa-calendar-day"></i> Hasta</label>
+                        <input type="date" id="fechaFin" onchange="filtrarMultas()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="multas-grid" id="contenedorMultas">
+                
+                <div class="tarjeta-multa" data-estado="pendiente" data-fecha="2026-06-15">
+                    <div class="multa-header-card">
+                        <span class="badge badge-pendiente">Pendiente</span>
+                        <span class="multa-id">Ref: #M-9021</span>
+                    </div>
+                    <div class="multa-icono-penalizacion">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="m-usuario" data-id="001">Juan Pérez</h3>
+                    <div class="multa-detalles">
+                        <p><strong>Libro:</strong> El Principito</p>
+                        <p><strong>Días de retraso:</strong> <span class="m-dias">5 días</span></p>
+                        <p><strong>Fecha Emisión:</strong> <span>30/05/2026</span></p>
+                        <p class="m-fecha-pago" style="display:none;"><strong>Fecha Pago:</strong> <span class="m-pago-val">-</span></p>
+                    </div>
+                    <div class="multa-monto">
+                        <span>Total:</span> ₡5,000
+                    </div>
+                    <div class="botones-multa">
+                        <button class="btn-pagar" onclick="abrirModalPago(this)">Registrar Pago</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="modalPago" class="modal">
+            <div class="modal-contenido context-pago">
+                <div class="modal-header">
+                    <h3>Confirmar Registro de Pago</h3>
+                    <button class="btn-cerrar" onclick="cerrarModalPago()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body-pago">
+                    <p>¿Está seguro de que desea registrar el pago de la siguiente infracción?</p>
+                    <div class="resumen-pago-caja">
+                        <p><strong>Usuario:</strong> <span id="pagoUsuario"></span></p>
+                        <p><strong>Referencia:</strong> <span id="pagoReferencia"></span></p>
+                        <p><strong>Monto Total:</strong> <span id="pagoMonto" style="color:#28a745; font-weight:700;"></span></p>
+                    </div>
+                    <p style="font-size:12px; color:#718096; margin-top:10px;">Esta acción validará el saldo en la base de datos y cambiará el estado de forma permanente.</p>
+                </div>
+                <div class="acciones-formulario">
+                    <button type="button" id="btnConfirmarPago" class="btn-guardar">Confirmar Pago</button>
+                    <button type="button" class="btn-cancelar" onclick="cerrarModalPago()">Cancelar</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-
         <h2>Biblioteca Digital</h2>
-
-        <p>
-            Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.
-        </p>
-
-        <p>
-            Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy Fernández - Braulio Cambronero.
-        </p>
-
-        <p>
-            © 2026 Biblioteca Digital - Todos los derechos reservados.
-        </p>
-
+        <p>Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.</p>
+        <p>Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy Fernández - Braulio Cambronero.</p>
+        <p>© 2026 Biblioteca Digital - Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        let tarjetaSeleccionada = null;
+
+        function abrirModalPago(boton) {
+            tarjetaSeleccionada = boton.closest(".tarjeta-multa");
+            
+            const usuario = tarjetaSeleccionada.querySelector(".m-usuario").textContent;
+            const referencia = tarjetaSeleccionada.querySelector(".multa-id").textContent;
+            const monto = tarjetaSeleccionada.querySelector(".multa-monto").textContent;
+
+            document.getElementById("pagoUsuario").textContent = usuario;
+            document.getElementById("pagoReferencia").textContent = referencia;
+            document.getElementById("pagoMonto").textContent = monto.replace("Total:","");
+
+            document.getElementById("modalPago").style.display = "flex";
+        }
+
+        function cerrarModalPago() {
+            document.getElementById("modalPago").style.display = "none";
+            tarjetaSeleccionada = null;
+        }
+
+
+        document.getElementById("btnConfirmarPago").addEventListener("click", function() {
+            if (tarjetaSeleccionada) {
+                tarjetaSeleccionada.setAttribute("data-estado", "pagada");
+                
+                const badge = tarjetaSeleccionada.querySelector(".badge");
+                badge.className = "badge badge-pagada";
+                badge.textContent = "Pagada";
+
+                const iconoContenedor = tarjetaSeleccionada.querySelector(".multa-icono-penalizacion");
+                iconoContenedor.className = "multa-icono-penalizacion status-ok";
+                iconoContenedor.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+
+                const hoy = new Date();
+                const fechaFormateada = `${String(hoy.getDate()).padStart(2, '0')}/${String(hoy.getMonth() + 1).padStart(2, '0')}/${hoy.getFullYear()}`;
+                
+                const contenedorFechaPago = tarjetaSeleccionada.querySelector(".m-fecha-pago");
+                tarjetaSeleccionada.querySelector(".m-pago-val").textContent = fechaFormateada;
+                contenedorFechaPago.style.display = "block";
+
+                const botonPagar = tarjetaSeleccionada.querySelector(".btn-pagar");
+                botonPagar.textContent = "Cancelado";
+                botonPagar.disabled = true;
+                botonPagar.style.background = "#a0aec0";
+                botonPagar.style.cursor = "not-allowed";
+
+                cerrarModalPago();
+            }
+        });
+
+        function filtrarMultas() {
+            const queryUsuario = document.getElementById("buscarUsuario").value.toLowerCase();
+            const filtroEstado = document.getElementById("filtrarEstado").value;
+            const fechaDesde = document.getElementById("fechaInicio").value;
+            const fechaHasta = document.getElementById("fechaFin").value;
+
+            const tarjetas = document.querySelectorAll(".tarjeta-multa");
+
+            tarjetas.forEach(tarjeta => {
+                const nombreUsuario = tarjeta.querySelector(".m-usuario").textContent.toLowerCase();
+                const idUsuario = tarjeta.querySelector(".m-usuario").getAttribute("data-id");
+                const estadoTarjeta = tarjeta.getAttribute("data-estado");
+                const fechaTarjetaStr = tarjeta.getAttribute("data-fecha");
+  
+                const dateTarjeta = new Date(fechaTarjetaStr);
+                const dateDesde = fechaDesde ? new Date(fechaDesde) : null;
+                const dateHasta = fechaHasta ? new Date(fechaHasta) : null;
+
+                const coincideUsuario = nombreUsuario.includes(queryUsuario) || idUsuario.includes(queryUsuario);
+                const coincideEstado = (filtroEstado === "todos") || (estadoTarjeta === filtroEstado);
+                
+                let coincideFecha = true;
+                if (dateDesde && dateTarjeta < dateDesde) coincideFecha = false;
+                if (dateHasta && dateTarjeta > dateHasta) coincideFecha = false;
+
+                if (coincideUsuario && coincideEstado && coincideFecha) {
+                    tarjeta.style.display = "";
+                } else {
+                    tarjeta.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
