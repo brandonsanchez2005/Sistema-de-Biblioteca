@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
+        </div>
+
+        <nav>
+            <a href="../index/index_admin.html">Inicio</a>
+            <a href="../panel_admin/panel_admin.html">Panel Admin</a>
+            <a href="../catalogo/catalogo_admin.html">Catálogo</a>
+            <a href="../prestamos/prestamos_admin.html">Préstamos</a>
+            <a href="../usuarios/usuarios.html">Usuarios</a>
+            <a href="../notificaciones/notificaciones.html">Notificaciones</a>
+            <a href="../../login/autenticacion/autenticacion.html">
+                <i class="fa-solid fa-power-off"></i>
+            </a>
+        </nav>
+    </header>
+
+    <main class="contenedor-panel-admin">
+
+        <section class="encabezado-panel">
+            <h1>Panel de Administración</h1>
+            <p>Monitorea la información general del sistema y accede rápidamente a los módulos principales.</p>
+        </section>
+
+        <section class="resumen-sistema">
+
+            <article class="tarjeta-resumen">
+                <div class="icono-resumen">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <h3>Usuarios registrados</h3>
+                    <p>125</p>
+                </div>
+            </article>
+
+            <article class="tarjeta-resumen">
+                <div class="icono-resumen">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div>
+                    <h3>Libros disponibles</h3>
+                    <p>340</p>
+                </div>
+            </article>
+
+            <article class="tarjeta-resumen">
+                <div class="icono-resumen">
+                    <i class="fa-solid fa-hand-holding"></i>
+                </div>
+
+                <div>
+                    <h3>Préstamos activos</h3>
+                    <p>48</p>
+                </div>
+            </article>
+
+            <article class="tarjeta-resumen alerta">
+                <div class="icono-resumen">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div>
+                    <h3>Multas pendientes</h3>
+                    <p>12</p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="modulos-admin">
+
+            <h2>Módulos del sistema</h2>
+
+            <div class="grid-modulos">
+
+                <a href="../usuarios/usuarios.html" class="modulo-card">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <h3>Usuarios</h3>
+                    <p>Gestionar usuarios registrados dentro del sistema.</p>
+                </a>
+
+                <a href="../catalogo/catalogo_admin.html" class="modulo-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Catálogo</h3>
+                    <p>Administrar libros, autores, categorías y disponibilidad.</p>
+                </a>
+
+                <a href="../prestamos/prestamos_admin.html" class="modulo-card">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <h3>Préstamos</h3>
+                    <p>Consultar, aprobar y controlar préstamos activos.</p>
+                </a>
+
+                <a href="../reservas/reservas_admin.html" class="modulo-card">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <h3>Reservas</h3>
+                    <p>Revisar solicitudes de libros reservados.</p>
+                </a>
+
+                <a href="../multas/multas_admin.html" class="modulo-card">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <h3>Multas</h3>
+                    <p>Consultar multas pendientes y restricciones de usuarios.</p>
+                </a>
+
+                <a href="../notificaciones/notificaciones.html" class="modulo-card">
+                    <i class="fa-solid fa-bell"></i>
+                    <h3>Notificaciones</h3>
+                    <p>Revisar avisos y actividades recientes del sistema.</p>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <h2>Biblioteca Digital</h2>
+
+        <p>
+            Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.
+        </p>
+
+        <p>
+            Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy Fernández - Braulio Cambronero.
+        </p>
+
+        <p>
+            © 2026 Biblioteca Digital - Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+</body>
+</html>
