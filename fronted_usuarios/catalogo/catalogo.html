@@ -118,7 +118,7 @@
                 </div>
             </div>
 
-            <div class="libro">
+            <div class="libro libro-multa">
                 <img src="img/img3.jpg" alt="El Principito">
                 <h3>El Principito</h3>
                 <p><strong>Autor:</strong> Antoine de Saint-Exupéry</p>
@@ -126,6 +126,9 @@
                 <p><strong>Estado:</strong> Prestados</p>
                 <div class="botones">
                     <button class="btn azul-oscuro">Adquirido</button>
+                    <button class="btn rojo" onclick="abrirMulta()">
+                        Presenta Multa
+                    </button>
                 </div>
             </div>
 
@@ -184,6 +187,56 @@
     </p>
 
 </footer>
+<div id="modalMulta" class="modal">
 
+    <div class="modal-contenido">
+
+        <span class="cerrar" onclick="cerrarMulta()">&times;</span>
+
+        <h2>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Multa Activa
+        </h2>
+
+        <p><strong>Libro:</strong> El Principito</p>
+
+        <p><strong>Días de retraso:</strong> 35 días</p>
+
+        <p><strong>Multa aplicada:</strong> ₡5.000</p>
+
+        <p>
+            El plazo máximo de devolución ha sido superado.
+            Mientras el libro no sea devuelto y la multa no
+            sea cancelada, no podrá solicitar nuevos préstamos.
+        </p>
+
+        <button class="btn rojo" onclick="cerrarMulta()">
+            Entendido
+        </button>
+
+    </div>
+
+</div>
+<script>
+
+function abrirMulta(){
+    document.getElementById("modalMulta").style.display = "flex";
+}
+
+function cerrarMulta(){
+    document.getElementById("modalMulta").style.display = "none";
+}
+
+window.onclick = function(event){
+
+    let modal = document.getElementById("modalMulta");
+
+    if(event.target === modal){
+        cerrarMulta();
+    }
+
+}
+
+</script>
 </body>
 </html>
