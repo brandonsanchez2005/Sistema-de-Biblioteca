@@ -199,3 +199,12 @@ h2 i{
 .menu i{
     font-size: 0.95rem;
 }
+
+.multas{
+    background:#ffd9d9;
+    border-left:6px solid #dc2626;
+}
+
+.multas h2{
+    color:#dc2626;
+}
