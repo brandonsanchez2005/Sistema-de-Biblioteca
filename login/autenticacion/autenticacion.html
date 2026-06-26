@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital - Autenticación</title>
+    
+    <link rel="stylesheet" href="styles/styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="body-login">
+
+    <div class="login-container">
+        <!-- Contenedor del Logo Institucional -->
+        <div class="login-logo">
+            <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
+            <h2>Biblioteca Digital</h2>
+            <p>Comunidad Educativa</p>
+        </div>
+
+        <!-- TARJETA 1: INICIO DE SESIÓN -->
+        <div class="login-card" id="cardLogin">
+            <h3>Iniciar Sesión</h3>
+            <p class="subtitulo-login">Ingresa tus credenciales de acceso</p>
+
+            <form id="formLogin">
+                <div class="campo-login">
+                    <label for="loginCorreo"><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
+                    <input type="email" id="loginCorreo" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="campo-login">
+                    <label for="loginPass"><i class="fa-solid fa-lock"></i> Contraseña</label>
+                    <input type="password" id="loginPass" placeholder="••••••••" required>
+                </div>
+
+                <div class="login-opciones">
+                    <a href="#" class="link-recuperar" onclick="mostrarRecuperar(event)">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-login-submit">Ingresar al Sistema</button>
+            </form>
+            
+            <!-- Mensaje Informativo de Prueba -->
+            <div class="credenciales-demo">
+                <p><strong>Demos de prueba visual:</strong></p>
+                <p>Admin: <code>admin@correo.com</code> (Cualquier clave)</p>
+                <p>Usuario: <code>usuario@correo.com</code> (Cualquier clave)</p>
+            </div>
+        </div>
+
+        <!-- TARJETA 2: RECUPERACIÓN DE CONTRASEÑA -->
+        <div class="login-card" id="cardRecuperar" style="display: none;">
+            <h3>Recuperar Contraseña</h3>
+            <p class="subtitulo-login">Introduce tu correo para enviarte las instrucciones de restablecimiento.</p>
+
+            <form id="formRecuperar">
+                <div class="campo-login">
+                    <label for="recuperarCorreo"><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
+                    <input type="email" id="recuperarCorreo" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <button type="button" class="btn-login-submit" onclick="simularEnvioRecuperacion()">Enviar Instrucciones</button>
+                
+                <div class="login-opciones volver-centro">
+                    <a href="#" class="link-recuperar" onclick="mostrarLogin(event)">
+                        <i class="fa-solid fa-arrow-left"></i> Volver al Inicio de Sesión
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function mostrarRecuperar(e) {
+            e.preventDefault();
+            document.getElementById('cardLogin').style.display = 'none';
+            document.getElementById('cardRecuperar').style.display = 'block';
+        }
+
+        function mostrarLogin(e) {
+            e.preventDefault();
+            document.getElementById('cardRecuperar').style.display = 'none';
+            document.getElementById('cardLogin').style.display = 'block';
+        }
+
+        function simularEnvioRecuperacion() {
+            const correo = document.getElementById('recuperarCorreo').value;
+            if(correo) {
+                alert(`Código de restablecimiento enviado con éxito a: ${correo}`);
+                document.getElementById('cardRecuperar').style.display = 'none';
+                document.getElementById('cardLogin').style.display = 'block';
+            } else {
+                alert('Por favor ingrese un correo válido.');
+            }
+        }
+
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const correo = document.getElementById('loginCorreo').value.toLowerCase().trim();
+
+            if (correo === 'admin@correo.com') {
+                window.location.href = "../../fronted_admin/index/index_admin.html";
+            } else if (correo === 'usuario@correo.com') {
+                window.location.href = "../../fronted_usuarios/index/index_usuarios.html";
+            } else {
+                alert('Credencial de simulación reconocida. Entrando como Usuario General...');
+                window.location.href = "../../index/index_usuarios.html";
+            }
+        });
+    </script>
+</body>
+</html>
