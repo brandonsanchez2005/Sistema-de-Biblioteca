@@ -44,6 +44,195 @@
     Descargar reportes
 </button>      
 
+    <main class="contenedor-panel-admin">
+
+        <section class="encabezado-panel">
+            <div>
+                <span class="etiqueta-admin">Administrador</span>
+                <h1>Panel de Administración</h1>
+                <p>Visualiza el estado general del sistema, revisa actividad reciente y accede rápidamente a los módulos principales.</p>
+            </div>
+
+            <div class="fecha-panel">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Actualizado: junio 2026</span>
+            </div>
+        </section>
+
+        <section class="resumen-sistema">
+
+            <article class="tarjeta-resumen">
+                <div class="icono-resumen azul">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="info-resumen">
+                    <span>Usuarios registrados</span>
+                    <h3>125</h3>
+                    <p>Usuarios activos en el sistema</p>
+                </div>
+            </article>
+
+            <article class="tarjeta-resumen">
+                <div class="icono-resumen verde">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div class="info-resumen">
+                    <span>Libros disponibles</span>
+                    <h3>340</h3>
+                    <p>Material bibliográfico registrado</p>
+                </div>
+            </article>
+
+            <article class="tarjeta-resumen">
+                <div class="icono-resumen morado">
+                    <i class="fa-solid fa-hand-holding"></i>
+                </div>
+
+                <div class="info-resumen">
+                    <span>Préstamos activos</span>
+                    <h3>48</h3>
+                    <p>Préstamos actualmente vigentes</p>
+                </div>
+            </article>
+
+            <article class="tarjeta-resumen">
+                <div class="icono-resumen rojo">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div class="info-resumen">
+                    <span>Multas pendientes</span>
+                    <h3>12</h3>
+                    <p>Usuarios con pagos pendientes</p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="contenido-dashboard">
+
+            <section class="modulos-admin">
+
+                <div class="titulo-seccion">
+                    <h2>Módulos del sistema</h2>
+                    <p>Accesos rápidos según los permisos del administrador.</p>
+                </div>
+
+                <div class="grid-modulos">
+
+                    <a href="../usuarios/usuarios.html" class="modulo-card">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <h3>Usuarios</h3>
+                        <p>Gestionar usuarios registrados, roles y permisos.</p>
+                    </a>
+
+                    <a href="../catalogo/catalogo_admin.html" class="modulo-card">
+                        <i class="fa-solid fa-book-open"></i>
+                        <h3>Catálogo</h3>
+                        <p>Administrar libros, categorías y disponibilidad.</p>
+                    </a>
+
+                    <a href="../prestamos/prestamos_admin.html" class="modulo-card">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h3>Préstamos</h3>
+                        <p>Consultar, aprobar y controlar préstamos activos.</p>
+                    </a>
+
+                    <a href="../reservas/reservas_admin.html" class="modulo-card">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <h3>Reservas</h3>
+                        <p>Revisar solicitudes de libros reservados.</p>
+                    </a>
+
+                    <a href="../multas/multas_admin.html" class="modulo-card">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        <h3>Multas</h3>
+                        <p>Consultar multas, restricciones y pagos pendientes.</p>
+                    </a>
+
+                    <a href="../notificaciones/notificaciones.html" class="modulo-card">
+                        <i class="fa-solid fa-bell"></i>
+                        <h3>Notificaciones</h3>
+                        <p>Revisar avisos y actividad reciente del sistema.</p>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <aside class="panel-lateral">
+
+                <section class="tarjeta-lateral">
+                    <div class="titulo-seccion pequeño">
+                        <h2>Actividad reciente</h2>
+                        <p>Últimos movimientos registrados.</p>
+                    </div>
+
+                    <div class="actividad">
+                        <div class="item-actividad">
+                            <i class="fa-solid fa-check"></i>
+                            <div>
+                                <h4>Préstamo aprobado</h4>
+                                <p>El Principito fue aprobado para préstamo.</p>
+                                <span>10 de mayo del 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="item-actividad">
+                            <i class="fa-solid fa-bookmark"></i>
+                            <div>
+                                <h4>Reserva disponible</h4>
+                                <p>Harry Potter y la Piedra Filosofal está disponible.</p>
+                                <span>21 de mayo del 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="item-actividad alerta">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                                <h4>Multa registrada</h4>
+                                <p>Usuario con multa pendiente de ¢5000.</p>
+                                <span>9 de junio del 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tarjeta-lateral">
+                    <div class="titulo-seccion pequeño">
+                        <h2>Estado del sistema</h2>
+                        <p>Resumen operativo actual.</p>
+                    </div>
+
+                    <div class="estado-sistema">
+                        <div>
+                            <span>Catálogo</span>
+                            <strong class="estado-activo">Operativo</strong>
+                        </div>
+
+                        <div>
+                            <span>Préstamos</span>
+                            <strong class="estado-activo">Operativo</strong>
+                        </div>
+
+                        <div>
+                            <span>Multas</span>
+                            <strong class="estado-alerta">Pendientes</strong>
+                        </div>
+
+                        <div>
+                            <span>Reservas</span>
+                            <strong class="estado-activo">Disponible</strong>
+                        </div>
+                    </div>
+                </section>
+
+            </aside>
+
+        </section>
+
     </main>
 
     <footer>
@@ -63,6 +252,9 @@
         </p>
 
     </footer>
+
+</body>
+</html>
 
 </body>
 </html>
