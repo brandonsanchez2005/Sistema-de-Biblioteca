@@ -198,6 +198,8 @@ footer p{
     background:white;
     width:550px;
     max-width:90%;
+    max-height:90vh;
+    overflow-y:auto;
 
     border-radius:20px;
     padding:30px;

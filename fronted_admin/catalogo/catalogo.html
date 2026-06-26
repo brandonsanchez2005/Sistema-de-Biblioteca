@@ -36,81 +36,81 @@
 
 <main>
     <section class="contenedor">
-        <h2>Catálogo de Libros</h2>
-        <p>Gestiona, consulta y actualiza los libros disponibles en la Biblioteca Digital.</p>
 
-        <div class="acciones-catalogo">
-            <a href="#" class="btn-agregar-libro" onclick="abrirModal()">
-                + Agregar Libro
-            </a>
-        </div>
+        <section class="busqueda">
+                <h2>Catálogo de Libros</h2>
+            <p>Gestiona, consulta y actualiza los libros disponibles en la Biblioteca Digital.</p>
 
-    <section class="busqueda">
-
-        <form>
-
-            <div class="campo-busqueda">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text"
-                    placeholder="Buscar por ID, ISBN, Título...">
+            <div class="acciones-catalogo">
+                <a href="#" class="btn-agregar-libro" onclick="abrirModalAgregar()">
+                    + Agregar Libro
+                </a>
             </div>
 
-            <details>
-                <summary>
-                    <i class="fa-solid fa-filter"></i>
-                    Búsqueda Avanzada
-                </summary>
+            <form>
 
-                <div class="busqueda-avanzada">
-
-                    <label>ID del libro:</label>
+                <div class="campo-busqueda">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text"
-                        placeholder="Ingrese el ID">
-
-                    <label>ISBN:</label>
-                    <input type="text" 
-                        placeholder="Ingrese el ISBN">
-
-                    <label>Título:</label>
-                    <input type="text"
-                        placeholder="Ingrese el título">
-
-                    <label>Autor:</label>
-                    <input type="text"
-                        placeholder="Ingrese el autor">
-
-                    <label>Categoría:</label>
-                    <select>
-                        <option>Todas</option>
-                        <option>Literatura</option>
-                        <option>Novela</option>
-                        <option>Infantil</option>
-                        <option>Ciencia</option>
-                        <option>Sobrenatural</option>
-                        <option>Historia</option>
-                        <option>Terror</option>
-                        <option>Aventura</option>
-                        <option>Fantasía</option>
-                    </select>
-
-                    <label>Estado:</label>
-                    <select>
-                        <option>Todos</option>
-                        <option>Disponible</option>
-                        <option>Prestado</option>
-                    </select>
-
-                    <button type="submit">
-                        Aplicar filtros
-                    </button>
-
+                        placeholder="Buscar por ID, ISBN, Título...">
                 </div>
 
-            </details>
+                <details>
+                    <summary>
+                        <i class="fa-solid fa-filter"></i>
+                        Búsqueda Avanzada
+                    </summary>
 
-        </form>
+                    <div class="busqueda-avanzada">
 
-    </section>
+                        <label>ID del libro:</label>
+                        <input type="text"
+                            placeholder="Ingrese el ID">
+
+                        <label>ISBN:</label>
+                        <input type="text" 
+                            placeholder="Ingrese el ISBN">
+
+                        <label>Título:</label>
+                        <input type="text"
+                            placeholder="Ingrese el título">
+
+                        <label>Autor:</label>
+                        <input type="text"
+                            placeholder="Ingrese el autor">
+
+                        <label>Categoría:</label>
+                        <select>
+                            <option>Todas</option>
+                            <option>Literatura</option>
+                            <option>Novela</option>
+                            <option>Infantil</option>
+                            <option>Ciencia</option>
+                            <option>Sobrenatural</option>
+                            <option>Historia</option>
+                            <option>Terror</option>
+                            <option>Aventura</option>
+                            <option>Fantasía</option>
+                        </select>
+
+                        <label>Estado:</label>
+                        <select>
+                            <option>Todos</option>
+                            <option>Disponible</option>
+                            <option>Prestado</option>
+                        </select>
+
+                        <button type="submit">
+                            Aplicar filtros
+                        </button>
+
+                    </div>
+
+                </details>
+
+            </form>
+
+        </section>
 
         <div class="catalogo">
             <div class="libro">
@@ -121,7 +121,9 @@
                 <p><strong>Estado:</strong> Disponibles</p>
                 <p><strong>Cantidad de copias</strong> 5</p>
                 <div class="botones-admin">
-                    <button class="btn-editar">Editar</button>
+                    <button class="btn-editar" onclick="abrirModalEditar()">
+                        Editar
+                    </button>
                     <button class="btn-eliminar">Eliminar</button>
                 </div>
             </div>
@@ -134,7 +136,9 @@
                 <p><strong>Estado:</strong> Disponibles</p>
                 <p><strong>Cantidad de copias</strong> 3</p>
                 <div class="botones-admin">
-                    <button class="btn-editar">Editar</button>
+                    <button class="btn-editar" onclick="abrirModalEditar()">
+                        Editar
+                    </button>
                     <button class="btn-eliminar">Eliminar</button>
                 </div>
             </div>
@@ -147,7 +151,9 @@
                 <p><strong>Estado:</strong> Prestados</p>
                 <p><strong>Cantidad de copias</strong> 0</p>
                 <div class="botones-admin">
-                    <button class="btn-editar">Editar</button>
+                    <button class="btn-editar" onclick="abrirModalEditar()">
+                        Editar
+                    </button>
                     <button class="btn-eliminar">Eliminar</button>
                 </div>
             </div>
@@ -160,7 +166,9 @@
                 <p><strong>Estado:</strong> Prestados</p>
                 <p><strong>Cantidad de copias</strong> 0</p>
                 <div class="botones-admin">
-                    <button class="btn-editar">Editar</button>
+                    <button class="btn-editar" onclick="abrirModalEditar()">
+                        Editar
+                    </button>
                     <button class="btn-eliminar">Eliminar</button>
                 </div>
             </div>
@@ -173,7 +181,9 @@
                 <p><strong>Estado:</strong> Prestados</p>
                 <p><strong>Cantidad de copias</strong> 0</p>
                 <div class="botones-admin">
-                    <button class="btn-editar">Editar</button>
+                    <button class="btn-editar" onclick="abrirModalEditar()">
+                        Editar
+                    </button>
                     <button class="btn-eliminar">Eliminar</button>
                 </div>
                 
@@ -187,7 +197,9 @@
                 <p><strong>Estado:</strong> Disponibles</p>
                 <p><strong>Cantidad de copias</strong> 11</p>
                 <div class="botones-admin">
-                    <button class="btn-editar">Editar</button>
+                    <button class="btn-editar" onclick="abrirModalEditar()">
+                        Editar
+                    </button>
                     <button class="btn-eliminar">Eliminar</button>
                 </div>
             </div>
@@ -198,7 +210,7 @@
     <div class="modal-contenido">
 
         <div class="modal-header">
-            <h3>Agregar Nuevo Libro</h3>
+            <h3 id="tituloModal">Agregar Nuevo Libro</h3>
             <button class="btn-cerrar" onclick="cerrarModal()">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -239,6 +251,15 @@
                     <option>Disponible</option>
                     <option>Prestado</option>
                 </select>
+            </div>
+
+            <div class="campo">
+                <label>Cantidad de copias</label>
+                <input
+                    type="number"
+                    min="0"
+                    value="1"
+                    placeholder="Ingrese la cantidad de copias">
             </div>
 
             <div class="campo">
@@ -285,11 +306,17 @@
 </footer>
 
 <script>
-function abrirModal(){
+function abrirModalAgregar() {
+    document.getElementById("tituloModal").textContent = "Agregar Nuevo Libro";
     document.getElementById("modalLibro").style.display = "flex";
 }
 
-function cerrarModal(){
+function abrirModalEditar() {
+    document.getElementById("tituloModal").textContent = "Editar Libro";
+    document.getElementById("modalLibro").style.display = "flex";
+}
+
+function cerrarModal() {
     document.getElementById("modalLibro").style.display = "none";
 }
 </script>
