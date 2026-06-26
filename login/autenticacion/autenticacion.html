@@ -16,14 +16,12 @@
 <body class="body-login">
 
     <div class="login-container">
-        <!-- Contenedor del Logo Institucional -->
         <div class="login-logo">
             <img src="img/logo.png" alt="Logo de la Biblioteca Digital">
             <h2>Biblioteca Digital</h2>
             <p>Comunidad Educativa</p>
         </div>
 
-        <!-- TARJETA 1: INICIO DE SESIÓN -->
         <div class="login-card" id="cardLogin">
             <h3>Iniciar Sesión</h3>
             <p class="subtitulo-login">Ingresa tus credenciales de acceso</p>
@@ -44,9 +42,13 @@
                 </div>
 
                 <button type="submit" class="btn-login-submit">Ingresar al Sistema</button>
+                
+                <div class="login-opciones volver-centro" style="margin-top: 20px; margin-bottom: 0;">
+                    <span style="font-size: 13px; color: #718096; margin-right: 5px;">¿No tienes cuenta?</span>
+                    <a href="#" class="link-recuperar" onclick="mostrarRegistro(event)">Regístrate aquí</a>
+                </div>
             </form>
             
-            <!-- Mensaje Informativo de Prueba -->
             <div class="credenciales-demo">
                 <p><strong>Demos de prueba visual:</strong></p>
                 <p>Admin: <code>admin@correo.com</code> (Cualquier clave)</p>
@@ -54,7 +56,6 @@
             </div>
         </div>
 
-        <!-- TARJETA 2: RECUPERACIÓN DE CONTRASEÑA -->
         <div class="login-card" id="cardRecuperar" style="display: none;">
             <h3>Recuperar Contraseña</h3>
             <p class="subtitulo-login">Introduce tu correo para enviarte las instrucciones de restablecimiento.</p>
@@ -65,11 +66,41 @@
                     <input type="email" id="recuperarCorreo" placeholder="ejemplo@correo.com" required>
                 </div>
 
-                <button type="button" class="btn-login-submit" onclick="simularEnvioRecuperacion()">Enviar Instrucciones</button>
+                <button type="submit" class="btn-login-submit">Enviar Instrucciones</button>
                 
                 <div class="login-opciones volver-centro">
                     <a href="#" class="link-recuperar" onclick="mostrarLogin(event)">
                         <i class="fa-solid fa-arrow-left"></i> Volver al Inicio de Sesión
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <div class="login-card" id="cardRegistro" style="display: none;">
+            <h3>Crear Cuenta</h3>
+            <p class="subtitulo-login">Regístrate para acceder al catálogo y préstamos.</p>
+
+            <form id="formRegistro">
+                <div class="campo-login">
+                    <label><i class="fa-solid fa-user"></i> Nombre Completo</label>
+                    <input type="text" placeholder="Tu nombre y apellidos" required>
+                </div>
+
+                <div class="campo-login">
+                    <label><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
+                    <input type="email" placeholder="tu_correo@estudiante.com" required>
+                </div>
+
+                <div class="campo-login">
+                    <label><i class="fa-solid fa-lock"></i> Contraseña</label>
+                    <input type="password" placeholder="Mínimo 8 caracteres" required>
+                </div>
+
+                <button type="submit" class="btn-login-submit">Registrarse</button>
+                
+                <div class="login-opciones volver-centro">
+                    <a href="#" class="link-recuperar" onclick="mostrarLogin(event)">
+                        <i class="fa-solid fa-arrow-left"></i> ¿Ya tienes cuenta? Inicia sesión
                     </a>
                 </div>
             </form>
@@ -79,25 +110,26 @@
     <script>
         function mostrarRecuperar(e) {
             e.preventDefault();
-            document.getElementById('cardLogin').style.display = 'none';
+            ocultarTodas();
             document.getElementById('cardRecuperar').style.display = 'block';
+        }
+
+        function mostrarRegistro(e) {
+            e.preventDefault();
+            ocultarTodas();
+            document.getElementById('cardRegistro').style.display = 'block';
         }
 
         function mostrarLogin(e) {
             e.preventDefault();
-            document.getElementById('cardRecuperar').style.display = 'none';
+            ocultarTodas();
             document.getElementById('cardLogin').style.display = 'block';
         }
 
-        function simularEnvioRecuperacion() {
-            const correo = document.getElementById('recuperarCorreo').value;
-            if(correo) {
-                alert(`Código de restablecimiento enviado con éxito a: ${correo}`);
-                document.getElementById('cardRecuperar').style.display = 'none';
-                document.getElementById('cardLogin').style.display = 'block';
-            } else {
-                alert('Por favor ingrese un correo válido.');
-            }
+        function ocultarTodas() {
+            document.getElementById('cardLogin').style.display = 'none';
+            document.getElementById('cardRecuperar').style.display = 'none';
+            document.getElementById('cardRegistro').style.display = 'none';
         }
 
         document.getElementById('formLogin').addEventListener('submit', function(e) {
@@ -110,9 +142,24 @@
                 window.location.href = "../../fronted_usuarios/index/index_usuarios.html";
             } else {
                 alert('Credencial de simulación reconocida. Entrando como Usuario General...');
-                window.location.href = "../../index/index_usuarios.html";
+                window.location.href = "../../fronted_usuarios/index/index_usuarios.html";
             }
         });
+        document.getElementById('formRegistro').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Registro simulado con éxito!');
+            ocultarTodas();
+            document.getElementById('cardLogin').style.display = 'block';
+        });
+
+        document.getElementById('formRecuperar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const correo = document.getElementById('recuperarCorreo').value;
+            alert(`Código de restablecimiento enviado con éxito a: ${correo}`);
+            ocultarTodas();
+            document.getElementById('cardLogin').style.display = 'block';
+        });
+        
     </script>
 </body>
 </html>
