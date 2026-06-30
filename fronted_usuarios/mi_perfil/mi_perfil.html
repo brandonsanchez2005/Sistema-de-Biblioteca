@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -39,27 +36,85 @@
         </nav>
     </header>
 
-    <main>
+    <main class="perfil-main">
+        <div class="perfil-grid">
             
+            <aside class="perfil-tarjeta-lateral">
+                <div class="avatar-contenedor">
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
+                <h2>Juan Pérez</h2>
+                <p class="perfil-id">ID: #001</p>
+                
+                <div class="perfil-badges">
+                    <span class="badge-rol"><i class="fa-solid fa-graduation-cap"></i> Usuario</span>
+                    <span class="badge-estado-activo"><i class="fa-solid fa-circle"></i> Activo</span>
+                </div>
+                
+                <hr class="perfil-divisor">
+                
+                <div class="resumen-rapido-prestamos">
+                    <div class="dato-mini">
+                        <span>3</span>
+                        <p>Libros Leídos</p>
+                    </div>
+                    <div class="dato-mini">
+                        <span>0</span>
+                        <p>Multas Activas</p>
+                    </div>
+                </div>
+            </aside>
 
+            <section class="perfil-panel-detalles">
+                <div class="panel-header">
+                    <h3><i class="fa-solid fa-address-card"></i> Información Personal</h3>
+                    <p>Detalles vinculados a tu cuenta estudiantil / institucional.</p>
+                </div>
+
+                <div class="detalles-grid">
+                    <div class="perfil-campo-info">
+                        <label>Nombre Completo</label>
+                        <p>Juan Pérez</p>
+                    </div>
+                    <div class="perfil-campo-info">
+                        <label>Correo Electrónico</label>
+                        <p>juan.perez@correo.com</p>
+                    </div>
+                    <div class="perfil-campo-info">
+                        <label>Carrera / Departamento</label>
+                        <p>Desarrollo de Software</p>
+                    </div>
+                    <div class="perfil-campo-info">
+                        <label>Fecha de Registro</label>
+                        <p>12 de Marzo, 2026</p>
+                    </div>
+                </div>
+
+                <div class="panel-header" style="margin-top: 35px;">
+                    <h3><i class="fa-solid fa-clock-rotate-left"></i> Resumen de Actividad Reciente</h3>
+                    <p>Últimas interacciones en el sistema.</p>
+                </div>
+
+                <div class="tabla-actividad-mock">
+                    <div class="fila-actividad">
+                        <span class="fecha-act">Hoy</span>
+                        <p>Consultó la disponibilidad del libro <strong>"Introducción a SQL"</strong>.</p>
+                    </div>
+                    <div class="fila-actividad">
+                        <span class="fecha-act">22 Jun</span>
+                        <p>Devolvió a tiempo el título <strong>"Principito"</strong>.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </main>
 
     <footer>
-
         <h2>Biblioteca Digital</h2>
-
-        <p>
-            Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.
-        </p>
-
-        <p>
-            Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy Fernández - Braulio Cambronero.
-        </p>
-
-        <p>
-            © 2026 Biblioteca Digital - Todos los derechos reservados.
-        </p>
-
+        <p>Acceso al conocimiento, aprendizaje e investigación para toda la comunidad educativa.</p>
+        <p>Desarrollado por: Carlos Ovares - Brandon Sánchez - Pedro Solano - Stacy Fernández - Braulio Cambronero.</p>
+        <p>© 2026 Biblioteca Digital - Todos los derechos reservados.</p>
     </footer>
 
 </body>
