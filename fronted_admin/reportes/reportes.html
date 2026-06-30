@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar reportes</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="encabezado-principal">
+        <div class="logo">
+            <span>Sistema de Biblioteca</span>
+        </div>
+
+        <a href="../index/index_admin.html" class="btn-volver">
+            ← Volver al inicio
+        </a>
+    </header>
+
+    <main class="contenedor-principal">
+
+        <section class="contenedor-reportes">
+
+            <div class="encabezado-reportes">
+                <span class="etiqueta-admin">
+                    🛡 Solo administradores
+                </span>
+
+                <h1>Descargar reportes</h1>
+            </div>
+
+            <form class="formulario-reportes">
+
+                <div class="campo-reporte">
+                    <label for="moduloReporte">Módulo del reporte</label>
+
+                    <select id="moduloReporte" name="moduloReporte">
+                        <option>Catálogo</option>
+                        <option>Préstamos</option>
+                        <option>Devoluciones</option>
+                        <option>Multas</option>
+                        <option>Reservas</option>
+                        <option>Usuarios</option>
+                    </select>
+                </div>
+
+                <div class="campo-reporte">
+                    <label for="tipoReporte">Tipo de reporte</label>
+
+                    <select id="tipoReporte" name="tipoReporte">
+                        <option>Todos los registros</option>
+                        <option>De tal fecha a tal fecha</option>
+                        <option>Por nombre específico</option>
+                        <option>Por letra específica</option>
+                        <option>Primeros 10 registros</option>
+                        <option>Últimos 10 registros</option>
+                    </select>
+                </div>
+
+                <div class="grupo-fechas-reportes">
+                    <div class="campo-reporte">
+                        <label for="fechaInicial">Fecha inicial</label>
+                        <input type="date" id="fechaInicial" name="fechaInicial">
+                    </div>
+
+                    <div class="campo-reporte">
+                        <label for="fechaFinal">Fecha final</label>
+                        <input type="date" id="fechaFinal" name="fechaFinal">
+                    </div>
+                </div>
+
+                <div class="campo-reporte">
+                    <label for="busquedaReporte">Nombre, letra o palabra clave</label>
+
+                    <input 
+                        type="text" 
+                        id="busquedaReporte" 
+                        name="busquedaReporte" 
+                        placeholder="Ejemplo: Juan, A, Activo, El Principito">
+                </div>
+
+                <div class="campo-reporte">
+                    <label for="formatoReporte">Formato del reporte</label>
+
+                    <select id="formatoReporte" name="formatoReporte">
+                        <option>PDF</option>
+                        <option>Excel</option>
+                    </select>
+                </div>
+                <div class="acciones-reportes">
+                    <a href="../index/index_admin.html" class="btn-secundario">
+                        Cancelar
+                    </a>
+
+                    <button type="button" class="btn-principal">
+                        Descargar reporte
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
