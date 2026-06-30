@@ -1,12 +1,54 @@
+/* ===========================
+   FONDO
+=========================== */
 
 .body-login {
-    background: linear-gradient(135deg, #eef2f7 0%, #d4e0f7 100%);
+    background: linear-gradient(
+        -45deg,
+        #a5cafc,
+        #79b4fc,
+        #4d95f8,
+        #3062d6,
+        #0b2969,
+        #071c49,
+        #0b2969,
+        #3062d6,
+        #4d95f8,
+        #79b4fc,
+        #a5cafc
+
+    );
+    background-size: 400% 400%;
+    animation: fondoAnimado 10s ease infinite;
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 5px;
 }
+
+@keyframes fondoAnimado {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ===========================
+   CONTENEDOR
+=========================== */
 
 .login-container {
     width: 100%;
@@ -15,51 +57,70 @@
 
 .login-logo {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
 }
 
 .login-logo img {
     height: 90px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .login-logo h2 {
     color: #3569e6;
     font-size: 26px;
     font-weight: 700;
+    margin: 0 0 4px;
 }
 
 .login-logo p {
-    color: #718096;
+    color: #eef4ff;
     font-size: 14px;
     font-weight: 500;
+    margin: 0;
 }
 
+/* ===========================
+   TARJETA
+=========================== */
+
 .login-card {
-    background: white;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+
     border-radius: 16px;
-    padding: 35px;
-    box-shadow: 0 10px 25px rgba(53, 105, 230, 0.08);
-    border: 1px solid #e2e8f0;
+    padding: 22px 30px;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.18),
+        0 0 30px rgba(53,105,230,.15);
 }
 
 .login-card h3 {
-    color: #2d3748;
-    font-size: 22px;
+    text-align: center;
+    color: #3569e6;
+    font-size: 30px;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin: 0 0 4px;
 }
 
 .subtitulo-login {
-    color: #718096;
-    font-size: 13px;
-    margin-bottom: 25px;
+    text-align: center;
+    color: #5d6d8c;
+    font-size: 15px;
+    margin: 0 0 18px;
+    line-height: 1.5;
 }
+
+/* ===========================
+   CAMPOS
+=========================== */
 
 .campo-login {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .campo-login label {
@@ -80,23 +141,28 @@
     border-radius: 8px;
     font-size: 14px;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: .25s;
+    background: white;
 }
 
 .campo-login input:focus {
     border-color: #3569e6;
-    box-shadow: 0 0 0 3px rgba(53, 105, 230, 0.15);
+    box-shadow: 0 0 0 4px rgba(53,105,230,.18);
 }
+
+/* ===========================
+   OPCIONES
+=========================== */
 
 .login-opciones {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .login-opciones.volver-centro {
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 16px;
     margin-bottom: 0;
 }
 
@@ -105,15 +171,21 @@
     font-size: 13px;
     text-decoration: none;
     font-weight: 500;
+    transition: .2s;
 }
 
 .link-recuperar:hover {
+    color: #214fb9;
     text-decoration: underline;
 }
 
+/* ===========================
+   BOTÓN
+=========================== */
+
 .btn-login-submit {
     width: 100%;
-    background: #3569e6;
+    background: linear-gradient(90deg,#3569e6,#4d84ff);
     color: white;
     border: none;
     padding: 13px;
@@ -121,25 +193,56 @@
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: .25s;
 }
 
 .btn-login-submit:hover {
-    background: #2b54bc;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(53,105,230,.35);
+    background: linear-gradient(90deg,#2958cf,#3569e6);
 }
 
+/* ===========================
+   DEMO
+=========================== */
+
 .credenciales-demo {
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px dashed #e2e8f0;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px dashed #d6dce7;
     font-size: 12px;
     color: #718096;
 }
 
 .credenciales-demo code {
-    background: #f1f5f9;
+    background: #eef4ff;
+    color: #3569e6;
     padding: 2px 6px;
     border-radius: 4px;
-    color: #3569e6;
     font-family: monospace;
+}
+
+.input-password{
+    position: relative;
+}
+
+.input-password input{
+    width: 100%;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
+.input-password i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #7b8794;
+    cursor: pointer;
+    transition: .25s;
+    font-size: 16px;
+}
+
+.input-password i:hover{
+    color: #3569e6;
 }
