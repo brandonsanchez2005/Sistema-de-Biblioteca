@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -40,12 +38,192 @@
     </header>
 
     <main>
-            
+        <section class="contenedor">
 
+            <section class="encabezado-historial">
+                <h1>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Historial de Préstamos
+                </h1>
+
+                <p>
+                    Consulta todos los préstamos que has realizado en la Biblioteca Digital.
+                    Puedes filtrarlos por libro, estado o fechas.
+                </p>
+            </section>
+
+            <section class="busqueda">
+                <h2>Buscar en el historial</h2>
+
+                <form id="formFiltros">
+                    <div class="campo-busqueda">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="buscarLibro" placeholder="Buscar por título del libro">
+                    </div>
+
+                    <details>
+                        <summary>Filtros Avanzados</summary>
+
+                        <div class="busqueda-avanzada">
+                            <label>Estado</label>
+
+                            <select id="estado">
+                                <option value="">Todos</option>
+                                <option>Devuelto</option>
+                                <option>Con multa</option>
+                                <option>Reservado</option>
+                            </select>
+
+                            <label>Desde</label>
+                            <input type="date" id="fechaInicio">
+
+                            <label>Hasta</label>
+                            <input type="date" id="fechaFin">
+
+                            <div class="acciones">
+                                <button type="button" class="btn azul" onclick="filtrarHistorial()">
+                                    Aplicar filtros
+                                </button>
+
+                                <button type="button" class="btn amarillo" onclick="limpiarFiltros()">
+                                    Limpiar
+                                </button>
+                            </div>
+                        </div>
+                    </details>
+                </form>
+            </section>
+
+            <section class="historial" id="historial">
+
+                <div class="fila-encabezado">
+                    <span>Libro</span>
+                    <span>Autor</span>
+                    <span>Fecha préstamo</span>
+                    <span>Fecha devolución</span>
+                    <span>Estado</span>
+                    <span>Multa / Nota</span>
+                </div>
+
+                <article class="prestamo" data-libro="El Principito" data-estado="Con multa" data-fecha="2026-05-10">
+                    <div class="libro-celda">
+                        <img src="../catalogo/img/img3.jpg" alt="El Principito">
+                        <h3>El Principito</h3>
+                    </div>
+
+                    <p>Antoine de Saint-Exupéry</p>
+                    <p>10/05/2026</p>
+                    <p>09/06/2026</p>
+
+                    <div class="estado-multa">
+                        <span class="badge multa">Con multa</span>
+                    </div>
+                    <div class="estado-multa">
+                        <span class="monto-multa">₡5.000</span>
+                    </div>
+
+                </article>
+
+                <article class="prestamo" data-libro="Harry Potter y la piedra filosofal" data-estado="Devuelto" data-fecha="2026-05-29">
+                    <div class="libro-celda">
+                        <img src="../catalogo/img/img4.jpg" alt="Harry Potter">
+                        <h3>Harry Potter y la piedra filosofal</h3>
+                    </div>
+
+                    <p>J.K. Rowling</p>
+                    <p>29/05/2026</p>
+                    <p>18/06/2026</p>
+
+                    <p>
+                        <span class="badge devuelto">Devuelto</span>
+                    </p>
+
+                    <p>-</p>
+                </article>
+
+                <article class="prestamo" data-libro="Cien años de soledad" data-estado="Reservado" data-fecha="2026-06-20">
+                    <div class="libro-celda">
+                        <img src="../catalogo/img/img2.jpg" alt="Cien años de soledad">
+                        <h3>Cien años de soledad</h3>
+                    </div>
+
+                    <p>Gabriel García Márquez</p>
+                    <p>20/06/2026</p>
+                    <p>-</p>
+
+                    <p>
+                        <span class="badge reservado">Reservado</span>
+                    </p>
+
+                    <p>Esperando disponibilidad.</p>
+                </article>
+
+                <article class="prestamo" data-libro="Don Quijote de la Mancha" data-estado="Devuelto" data-fecha="2026-04-15">
+                    <div class="libro-celda">
+                        <img src="../catalogo/img/img1.jpg" alt="Don Quijote">
+                        <h3>Don Quijote de la Mancha</h3>
+                    </div>
+
+                    <p>Miguel de Cervantes</p>
+                    <p>15/04/2026</p>
+                    <p>14/05/2026</p>
+
+                    <p>
+                        <span class="badge devuelto">Devuelto</span>
+                    </p>
+
+                    <p>-</p>
+                </article>
+
+                <article class="prestamo" data-libro="Cementerio de animales" data-estado="Devuelto" data-fecha="2026-03-10">
+                    <div class="libro-celda">
+                        <img src="../catalogo/img/img5.jpg" alt="Cementerio de animales">
+                        <h3>Cementerio de animales</h3>
+                    </div>
+
+                    <p>Stephen King</p>
+                    <p>10/03/2026</p>
+                    <p>06/04/2026</p>
+
+                    <p>
+                        <span class="badge devuelto">Devuelto</span>
+                    </p>
+
+                    <p>-</p>
+                </article>
+
+                <article class="prestamo" data-libro="Fuego y Sangre" data-estado="Devuelto" data-fecha="2026-02-18">
+                    <div class="libro-celda">
+                        <img src="../catalogo/img/img6.jpg" alt="Fuego y Sangre">
+                        <h3>Fuego y Sangre</h3>
+                    </div>
+
+                    <p>George R. R. Martin</p>
+                    <p>18/02/2026</p>
+                    <p>18/03/2026</p>
+
+                    <p>
+                        <span class="badge devuelto">Devuelto</span>
+                    </p>
+
+                    <p>-</p>
+                </article>
+
+            </section>
+
+            <div id="sinResultados" style="display:none;text-align:center;padding:40px;">
+                <i class="fa-solid fa-book-open" style="font-size:55px;color:#3569e6;margin-bottom:20px;"></i>
+
+                <h2>No se encontraron resultados</h2>
+
+                <p>No existen préstamos que coincidan con los filtros seleccionados.</p>
+            </div>
+
+        </section>
     </main>
 
     <footer>
-
         <h2>Biblioteca Digital</h2>
 
         <p>
@@ -59,8 +237,74 @@
         <p>
             © 2026 Biblioteca Digital - Todos los derechos reservados.
         </p>
-
     </footer>
+
+    <script>
+        const prestamos = document.querySelectorAll(".prestamo");
+
+        function filtrarHistorial(){
+
+            let libro = document.getElementById("buscarLibro").value.toLowerCase();
+            let estado = document.getElementById("estado").value;
+            let inicio = document.getElementById("fechaInicio").value;
+            let fin = document.getElementById("fechaFin").value;
+
+            let encontrados = 0;
+
+            prestamos.forEach(prestamo => {
+
+                let nombre = prestamo.dataset.libro.toLowerCase();
+                let estadoLibro = prestamo.dataset.estado;
+                let fecha = prestamo.dataset.fecha;
+
+                let mostrar = true;
+
+                if(libro != "" && !nombre.includes(libro)){
+                    mostrar = false;
+                }
+
+                if(estado != "" && estadoLibro != estado){
+                    mostrar = false;
+                }
+
+                if(inicio != "" && fecha < inicio){
+                    mostrar = false;
+                }
+
+                if(fin != "" && fecha > fin){
+                    mostrar = false;
+                }
+
+                if(mostrar){
+                    prestamo.style.display = "grid";
+                    encontrados++;
+                }else{
+                    prestamo.style.display = "none";
+                }
+
+            });
+
+            if(encontrados == 0){
+                document.getElementById("sinResultados").style.display = "block";
+            }else{
+                document.getElementById("sinResultados").style.display = "none";
+            }
+        }
+
+        function limpiarFiltros(){
+
+            document.getElementById("buscarLibro").value = "";
+            document.getElementById("estado").value = "";
+            document.getElementById("fechaInicio").value = "";
+            document.getElementById("fechaFin").value = "";
+
+            prestamos.forEach(prestamo => {
+                prestamo.style.display = "grid";
+            });
+
+            document.getElementById("sinResultados").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
